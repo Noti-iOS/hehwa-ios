@@ -21,7 +21,13 @@ class LoginVC: UIViewController {
         setView()
         setSocialLoginButton()
     }
+    
+    // 임시 탭바 화면 이동
     @IBAction func moveHome(_ sender: Any) {
+        let vc = ViewControllerFactory.viewController(for: .tabBar)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+        
     }
 }
 
