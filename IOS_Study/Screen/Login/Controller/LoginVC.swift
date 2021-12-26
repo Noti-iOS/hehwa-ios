@@ -14,11 +14,14 @@ class LoginVC: UIViewController {
     @IBOutlet weak var kakaoLogin: UIButton!
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
+    @IBOutlet weak var moveHome: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
         setSocialLoginButton()
+    }
+    @IBAction func moveHome(_ sender: Any) {
     }
 }
 
