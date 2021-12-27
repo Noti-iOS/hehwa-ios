@@ -14,6 +14,7 @@ struct Identifiers {
     static let chattingSB = "Chatting"
     static let myPageSB = "MyPage"
     static let loginSB = "Login"
+    static let signinSB = "Signin"
     
     //MARK: - Controller
     static let MainTBC = "MainTBC"
@@ -21,6 +22,7 @@ struct Identifiers {
     static let chattingVC = "ChattingVC"
     static let myPageVC = "MyPageVC"
     static let loginVC = "LoginVC"
+    static let signinVC = "SigninVC"
     
     //MARK: - Cell
     

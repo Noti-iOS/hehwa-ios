@@ -49,12 +49,12 @@ extension LoginVC{
         googleLogin.layer.cornerRadius = 4
         googleLogin.layer.shadowColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.25)
         googleLogin.layer.shadowRadius = 3
-        googleLogin.layer.shadowOpacity = 0.7
+        googleLogin.layer.shadowOpacity = 0.5
         googleLogin.layer.shadowOffset = CGSize(width: 0, height: 1)
         kakaoLogin.layer.cornerRadius = 4
         kakaoLogin.layer.shadowColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.25)
         kakaoLogin.layer.shadowRadius = 3
-        kakaoLogin.layer.shadowOpacity = 0.7
+        kakaoLogin.layer.shadowOpacity = 0.5
         kakaoLogin.layer.shadowOffset = CGSize(width: 0, height: 1)
     }
 }
