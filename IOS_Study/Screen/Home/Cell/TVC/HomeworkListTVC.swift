@@ -9,10 +9,8 @@ import UIKit
 
 class HomeworkListTVC : UITableViewCell {
     @IBOutlet weak var checkBtn: UIButton!
-//    override class func awakeFromNib() {
-//        super.awakeFromNib()
-//        setHomeworkListCell()
-//    }
+    @IBOutlet weak var homeworkContents: UILabel!
+    
     @IBAction func checkHomework(_ sender: Any) {
         if checkBtn.imageView?.image == UIImage(named: "CheckBox_Selected") {
             checkBtn.setImage(UIImage(named: "CheckBox_UnSelected"), for: .normal)

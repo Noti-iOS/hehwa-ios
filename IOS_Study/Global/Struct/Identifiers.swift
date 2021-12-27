@@ -23,7 +23,7 @@ struct Identifiers {
     //MARK: - Cell
     static let subjectListCVC = "SubjectListCVC"
     static let memoCVC = "MemoCVC"
-    static let homeworkTVC = "HomeworkTVC"
+    static let homeworkListTVC = "HomeworkListTVC"
     
     //MARK: - View
 }
