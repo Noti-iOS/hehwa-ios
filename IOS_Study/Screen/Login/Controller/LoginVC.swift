@@ -71,9 +71,9 @@ extension LoginVC{
         logo.image = logoImage
         loginLabel.alpha = 0.5
         loginButton.layer.cornerRadius = 4
-        inputEmail.addLeftPadding()
+        inputEmail.addLeftPadding(width: 10)
         inputEmail.layer.cornerRadius = 4
-        inputPassword.addLeftPadding()
+        inputPassword.addLeftPadding(width: 10)
         inputPassword.layer.cornerRadius = 4
     }
     
@@ -93,11 +93,4 @@ extension LoginVC{
 }
 
 // MARK: - Custom Method
-extension UITextField {
-    func addLeftPadding() {
-        // text 입력 부분 왼쪽 패딩을 위한 함수
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
-        self.leftView = paddingView
-        self.leftViewMode = ViewMode.always
-    }
-}
+
