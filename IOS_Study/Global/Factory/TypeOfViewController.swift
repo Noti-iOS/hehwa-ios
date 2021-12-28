@@ -6,4 +6,30 @@
 //
 
 import Foundation
+enum TypeOfViewController {
+    case tabBar
+    case home
+    case chatting
+    case myPage
+    case login
+    case signin
+}
 
+extension TypeOfViewController {
+    func storyboardRepresentation() -> StoryboardRepresentation {
+        switch self {
+        case .tabBar:
+            return StoryboardRepresentation(bundle: nil, storyboardName: Identifiers.tabBarSB, storyboardId: Identifiers.MainTBC)
+        case .home:
+            return StoryboardRepresentation(bundle: nil, storyboardName: Identifiers.homeSB, storyboardId: Identifiers.homeVC)
+        case .chatting:
+            return StoryboardRepresentation(bundle: nil, storyboardName: Identifiers.chattingSB, storyboardId: Identifiers.chattingVC)
+        case .myPage:
+            return StoryboardRepresentation(bundle: nil, storyboardName: Identifiers.myPageSB, storyboardId: Identifiers.myPageVC)
+        case .login:
+            return StoryboardRepresentation(bundle: nil, storyboardName: Identifiers.loginSB, storyboardId: Identifiers.loginVC)
+        case .signin:
+            return StoryboardRepresentation(bundle: nil, storyboardName: Identifiers.signinSB, storyboardId: Identifiers.signinVC)
+        }
+    }
+}
