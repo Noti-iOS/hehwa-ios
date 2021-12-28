@@ -19,6 +19,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        setDelegate()
         setSocialLoginButton()
     }
     
@@ -31,8 +32,40 @@ class LoginVC: UIViewController {
     }
 }
 
+extension LoginVC: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor(red: 100/255, green: 119/255, blue: 211/255, alpha: 1).cgColor
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        textField.layer.borderWidth = 0
+        return true
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //email field에서 리턴키룰 누르면 password field로 포커스 이동
+        if (textField.isEqual(inputEmail)){
+            print("input email")
+            inputPassword.becomeFirstResponder()
+        }
+        // 리턴 버튼을 누르면 키보드 사라짐
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func endEdit(){
+        inputPassword.resignFirstResponder()
+    }
+}
+
 // MARK: - custom Method
 extension LoginVC{
+    func setDelegate(){
+        inputEmail.delegate = self
+        inputPassword.delegate = self
+    }
+    
     func setView () {
         let logoImage = UIImage(named: "Logo")
         logo.image = logoImage
