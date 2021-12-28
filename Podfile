@@ -6,5 +6,6 @@ target 'IOS_Study' do
   use_frameworks!
 
   # Pods for IOS_Study
+  pod 'FSCalendar'
 
 end
