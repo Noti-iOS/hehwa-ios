@@ -18,9 +18,11 @@ class MemoCVC: UICollectionViewCell {
 //MARK: Custom Function
 extension MemoCVC {
     func setMemoCell() {
+        memoTF.addPadding()
+        memoTF.text = ""
         memoTF.backgroundColor = .systemGray6
         memoTF.layer.cornerRadius = 10
-        
+        memoTF.isScrollEnabled = false
         memoTF.heightAnchor.constraint(equalToConstant: 130).isActive = true
     }
 }

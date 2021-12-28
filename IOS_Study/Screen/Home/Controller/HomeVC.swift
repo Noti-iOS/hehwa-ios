@@ -9,6 +9,13 @@ import UIKit
 import FSCalendar
 
 class HomeVC: UIViewController {
+    // 임시 Subject 데이터
+    let subjects = [
+        Subjects("수학", "윤경T", ["쎈 수학 p110~120", "곱셈공식 암기"]),
+        Subjects("영어", "호준T", ["단어 Day 7 암기", "영어 문법(초록책) p20~24", "수능특강 p11~14","a","b","c"]),
+        Subjects("과학", "은희T", ["p51~60", "주기율표 암기"])
+    ]
+    
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var currentDate: UILabel!
     @IBOutlet weak var weekMonthChangeBtn: UIButton!
@@ -130,32 +137,34 @@ extension HomeVC: FSCalendarDelegate {
 //MARK: UICollectionViewDataSource
 extension HomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10 + 1
+        // 과목 + memo
+        return subjects.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == 10 {
-            let cell = subjectCV.dequeueReusableCell(withReuseIdentifier: Identifiers.memoCVC, for: indexPath)
+        if indexPath.row == subjects.count {
+            let cell = subjectCV.dequeueReusableCell(withReuseIdentifier: Identifiers.memoCVC, for: indexPath) as! MemoCVC
             return cell
         } else {
-            let cell = subjectCV.dequeueReusableCell(withReuseIdentifier: Identifiers.subjectListCVC, for: indexPath)
+            let cell = subjectCV.dequeueReusableCell(withReuseIdentifier: Identifiers.subjectListCVC, for: indexPath) as! SubjectListCVC
+            cell.subjectName.text = subjects[indexPath.row].subjectName
+            cell.teacher.text = subjects[indexPath.row].teacher
+            cell.homeworkContents = subjects[indexPath.row].homework
+            cell.homeworkListHeight.constant = CGFloat(cell.homeworkContents.count * 45)
             return cell
         }
     }
 }
 
+//MARK: UICollectionViewDelegate
 extension HomeVC: UICollectionViewDelegate {
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
        if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
            calendarView.setScope(.week, animated: true)
            weekMonthChangeBtn.setTitle("월", for: .normal)
-       } else if scrollView.panGestureRecognizer.translation(in: scrollView).y > 200{
+       } else if scrollView.panGestureRecognizer.translation(in: scrollView).y > 200 {
            calendarView.setScope(.month, animated: true)
            weekMonthChangeBtn.setTitle("주", for: .normal)
        }
     }
-}
-//MARK: 임시 숙제 Data
-extension HomeVC {
-    
 }
