@@ -20,7 +20,6 @@ extension MemoCVC {
     func setMemoCell() {
         memoTF.addPadding()
         memoTF.text = ""
-        memoTF.font = UIFont(name: "AppleSDGothicNeoR00", size: 17)
         memoTF.backgroundColor = .systemGray6
         memoTF.layer.cornerRadius = 10
         memoTF.isScrollEnabled = false

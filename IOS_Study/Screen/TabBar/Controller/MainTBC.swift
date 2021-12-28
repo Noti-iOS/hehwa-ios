@@ -33,14 +33,15 @@ class MainTBC: UITabBarController {
         
         // 탭바 스타일 설정
         tabBar.frame.size.height = 84
-        tabBar.tintColor = .label
+        tabBar.tintColor = .black
         tabBar.unselectedItemTintColor = .lightGray
         
-        tabBar.layer.borderWidth = 0.3
-        tabBar.layer.borderColor = UIColor.lightGray.cgColor
-        tabBar.clipsToBounds = true
-        
-        tabBar.backgroundColor = UIColor(named: "TabBarColor")
+        tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
+        tabBar.layer.shadowRadius = 2
+        tabBar.layer.shadowColor = UIColor.black.cgColor
+        tabBar.layer.shadowOpacity = 0.3
+
+        tabBar.backgroundColor = .white
         tabBar.isTranslucent = false
         
         // 탭 구성
