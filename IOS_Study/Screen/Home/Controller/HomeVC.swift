@@ -35,7 +35,14 @@ class HomeVC: UIViewController {
         setUpCalendar()
         setUpSubjectCV()
         setUpDelegate()
+        setUpNotification()
     }
+//    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+//        self.view.reloadInputViews()
+//        self.calendarView?.reloadData()
+//    }
+    
+    //MARK: IBAction
     // 월-주 Change Btn
     @IBAction func changeWeekMonth(_ sender: Any) {
         if calendarView.scope == .week {
@@ -45,6 +52,7 @@ class HomeVC: UIViewController {
             calendarView.setScope(.week, animated: true)
             weekMonthChangeBtn.setTitle("월", for: .normal)
         }
+        self.view.endEditing(true)
     }
     // 다음주, 다음달 Btn
     @IBAction func goNextMonthWeek(_ sender: Any) {
@@ -62,15 +70,38 @@ class HomeVC: UIViewController {
             scrollCurrentPage(isPrev: true)
         }
     }
+    
+    @objc func KeyBoardwillShow(_ notificatoin : Notification ){
+        let keyboardSize = (notificatoin.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let height = keyboardSize.height - view.safeAreaInsets.bottom
+        
+        var contentInset = subjectCV.contentInset
+        contentInset.bottom = height + 14
+        subjectCV.contentInset = contentInset
+    }
+    
+    @objc func KeyBoardwillHide(_ notificatoin : Notification ){
+        let contentInset = UIEdgeInsets.zero
+        subjectCV.contentInset = contentInset
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
 }
+
 //MARK: Custom Function
 extension HomeVC {
+    func setUpNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardwillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardwillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
     // 캘린더 기본 Setting
     func setUpCalendar() {
         calendarView.delegate = self
         
         calendarView.layer.cornerRadius = 10
-        calendarView.layer.shadowColor = UIColor.black.cgColor
+        calendarView.layer.shadowColor = UIColor.label.cgColor
         calendarView.layer.shadowRadius = 2
         calendarView.layer.shadowOffset = CGSize(width: 0, height: 4)
         calendarView.layer.shadowOpacity = 0.3
@@ -81,13 +112,16 @@ extension HomeVC {
         
         // 요일 Title
         calendarView.appearance.caseOptions = FSCalendarCaseOptions.weekdayUsesSingleUpperCase
-        calendarView.appearance.weekdayTextColor = .black
+        calendarView.appearance.weekdayTextColor = .label
         calendarView.appearance.weekdayFont = UIFont.boldSystemFont(ofSize: 14)
         
         // 선택된 날 appearance
         calendarView.appearance.selectionColor = .white
         calendarView.appearance.borderSelectionColor = UIColor.lightGray
-        calendarView.appearance.titleSelectionColor = .black
+        calendarView.appearance.titleSelectionColor = .label
+        
+        calendarView.appearance.titleDefaultColor = UIColor.label
+        calendarView.appearance.titlePlaceholderColor = .lightGray
     }
     
     // subjectCV Setting
@@ -144,13 +178,18 @@ extension HomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == subjects.count {
             let cell = subjectCV.dequeueReusableCell(withReuseIdentifier: Identifiers.memoCVC, for: indexPath) as! MemoCVC
+            
+            cell.widthAnchor.constraint(equalToConstant: subjectCV.frame.width).isActive = true
             return cell
         } else {
             let cell = subjectCV.dequeueReusableCell(withReuseIdentifier: Identifiers.subjectListCVC, for: indexPath) as! SubjectListCVC
+            
             cell.subjectName.text = subjects[indexPath.row].subjectName
             cell.teacher.text = subjects[indexPath.row].teacher
             cell.homeworkContents = subjects[indexPath.row].homework
+            
             cell.homeworkListHeight.constant = CGFloat(cell.homeworkContents.count * 45)
+            cell.widthAnchor.constraint(equalToConstant: subjectCV.frame.width).isActive = true
             return cell
         }
     }
@@ -159,12 +198,16 @@ extension HomeVC: UICollectionViewDataSource {
 //MARK: UICollectionViewDelegate
 extension HomeVC: UICollectionViewDelegate {
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-       if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
-           calendarView.setScope(.week, animated: true)
-           weekMonthChangeBtn.setTitle("월", for: .normal)
-       } else if scrollView.panGestureRecognizer.translation(in: scrollView).y > 200 {
-           calendarView.setScope(.month, animated: true)
-           weekMonthChangeBtn.setTitle("주", for: .normal)
-       }
+        // 맨위에서 스크롤하거나 세게 스크롤하면 월로 바뀜
+        // 그냥 아래로 스크롤하면 주로 바뀜
+        // 주인 상태에서 스크롤 가능
+        if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
+            calendarView.setScope(.week, animated: true)
+            weekMonthChangeBtn.setTitle("월", for: .normal)
+        } else if scrollView.contentOffset.y < 0 || scrollView.panGestureRecognizer.translation(in: scrollView).y > 200 {
+            calendarView.setScope(.month, animated: true)
+            weekMonthChangeBtn.setTitle("주", for: .normal)
+            self.view.endEditing(true)
+        }
     }
 }
