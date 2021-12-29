@@ -15,6 +15,7 @@ class HomeVC: UIViewController {
         Subjects("영어", "호준T", ["단어 Day 7 암기", "영어 문법(초록책) p20~24", "수능특강 p11~14","a","b","c"]),
         Subjects("과학", "은희T", ["p51~60", "주기율표 암기"])
     ]
+    // commit test
     
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var currentDate: UILabel!
