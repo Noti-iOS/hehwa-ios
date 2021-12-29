@@ -1,6 +1,0 @@
-framework module Pods_IOS_Study {
-  umbrella header "Pods-IOS_Study-umbrella.h"
-
-  export *
-  module * { export * }
-}
