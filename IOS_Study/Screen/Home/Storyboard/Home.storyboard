@@ -25,6 +25,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3g-xg-DBw">
+                                <rect key="frame" x="0.0" y="-44" width="414" height="552"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="207-8L-Sba">
+                                        <rect key="frame" x="186.5" y="539" width="41" height="5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="84n-Te-tys"/>
+                                            <constraint firstAttribute="width" constant="41" id="LpY-ZE-s8g"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="207-8L-Sba" secondAttribute="bottom" constant="8" id="aLW-nc-aAQ"/>
+                                    <constraint firstItem="207-8L-Sba" firstAttribute="centerX" secondItem="s3g-xg-DBw" secondAttribute="centerX" id="fuD-Yf-PEt"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY'S HOMEWORK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoR-AD-Y38">
                                 <rect key="frame" x="23" y="86" width="228" height="36"/>
                                 <constraints>
@@ -273,6 +289,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="oec-8F-jdt" firstAttribute="top" secondItem="s3g-xg-DBw" secondAttribute="bottom" id="0ED-nJ-fma"/>
                             <constraint firstItem="oec-8F-jdt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0dx-tR-zCl"/>
                             <constraint firstItem="BWF-yU-JNJ" firstAttribute="leading" secondItem="6Er-6a-9o8" secondAttribute="trailing" constant="18" id="28X-id-OvM"/>
                             <constraint firstItem="oec-8F-jdt" firstAttribute="top" secondItem="Swu-Uo-D11" secondAttribute="bottom" constant="8" symbolic="YES" id="38S-lN-NeY"/>
@@ -282,7 +299,9 @@
                             <constraint firstItem="oec-8F-jdt" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="AiR-Sa-63M"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Swu-Uo-D11" secondAttribute="trailing" constant="17" id="BBM-yF-1Jl"/>
                             <constraint firstItem="BWF-yU-JNJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="43" id="BTt-m2-fxx"/>
+                            <constraint firstItem="s3g-xg-DBw" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="BWv-VY-hY2"/>
                             <constraint firstItem="EoR-AD-Y38" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="23" id="GCn-CI-tMI"/>
+                            <constraint firstItem="s3g-xg-DBw" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="-44" id="PCR-6K-fap"/>
                             <constraint firstItem="m54-Fq-mCc" firstAttribute="top" secondItem="BCd-b3-2xh" secondAttribute="bottom" constant="6" id="WPg-pL-Yyd"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7sz-iR-PO5" secondAttribute="trailing" constant="23" id="YhP-ab-FB6"/>
                             <constraint firstItem="e4V-bK-ny6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="23" id="ZhJ-fu-jdS"/>
@@ -291,6 +310,7 @@
                             <constraint firstItem="Swu-Uo-D11" firstAttribute="top" secondItem="e4V-bK-ny6" secondAttribute="bottom" constant="12" id="fTK-Sw-dDM"/>
                             <constraint firstItem="cMd-eX-LA7" firstAttribute="leading" secondItem="m54-Fq-mCc" secondAttribute="trailing" constant="18" id="fp9-5i-Bqr"/>
                             <constraint firstItem="7sz-iR-PO5" firstAttribute="top" secondItem="BCd-b3-2xh" secondAttribute="bottom" constant="4" id="mSP-lZ-yci"/>
+                            <constraint firstItem="s3g-xg-DBw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nKg-be-VCT"/>
                             <constraint firstItem="oec-8F-jdt" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="p2v-ZD-NLa"/>
                             <constraint firstItem="BCd-b3-2xh" firstAttribute="top" secondItem="EoR-AD-Y38" secondAttribute="bottom" constant="-3" id="pkL-TH-U15"/>
                             <constraint firstItem="7sz-iR-PO5" firstAttribute="leading" secondItem="cMd-eX-LA7" secondAttribute="trailing" constant="18" id="pyX-Yc-0Ve"/>
@@ -300,6 +320,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="s3g-xg-DBw" id="PhG-Xj-EWQ"/>
                         <outlet property="calendarHeight" destination="3Fw-wN-AJO" id="6RA-1d-7Wz"/>
                         <outlet property="calendarView" destination="Swu-Uo-D11" id="uon-Hc-akX"/>
                         <outlet property="currentDate" destination="e4V-bK-ny6" id="ANk-el-iBI"/>
@@ -309,11 +330,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="319" y="-273"/>
+            <point key="canvasLocation" x="318.84057971014494" y="-273.21428571428572"/>
         </scene>
     </scenes>
     <resources>
         <image name="Alarm" width="16" height="19.666666030883789"/>
+        <image name="Bar" width="41" height="5"/>
         <image name="CheckBox_UnSelected" width="24" height="24"/>
         <image name="ETC" width="24" height="24"/>
         <image name="Separator" width="359" height="0.66666668653488159"/>

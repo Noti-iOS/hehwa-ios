@@ -21,6 +21,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var weekMonthChangeBtn: UIButton!
     @IBOutlet weak var subjectCV: UICollectionView!
     @IBOutlet weak var calendarHeight: NSLayoutConstraint!
+    @IBOutlet weak var backgroundView: UIView!
     
     var currentPage: Date?
     private lazy var today: Date = { return Date() }()
@@ -32,27 +33,24 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpCalendarBackground()
         setUpCalendar()
         setUpSubjectCV()
-        setUpDelegate()
         setUpNotification()
     }
-//    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-//        self.view.reloadInputViews()
-//        self.calendarView?.reloadData()
-//    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
     
     //MARK: IBAction
     // 월-주 Change Btn
     @IBAction func changeWeekMonth(_ sender: Any) {
         if calendarView.scope == .week {
-            calendarView.setScope(.month, animated: true)
-            weekMonthChangeBtn.setTitle("주", for: .normal)
+            setCalendarToMonth()
         } else {
-            calendarView.setScope(.week, animated: true)
-            weekMonthChangeBtn.setTitle("월", for: .normal)
+            setCalendarToWeek()
         }
-        self.view.endEditing(true)
     }
     // 다음주, 다음달 Btn
     @IBAction func goNextMonthWeek(_ sender: Any) {
@@ -85,29 +83,27 @@ class HomeVC: UIViewController {
         subjectCV.contentInset = contentInset
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        self.view.endEditing(true)
+    @objc func calendarViewVerticalScroll(sender: UIPanGestureRecognizer) {
+        let direction = sender.translation(in: self.view)
+        
+        //week
+        if direction.y < 0 {
+            setCalendarToWeek()
+        } else {
+            setCalendarToMonth()
+        }
     }
 }
 
 //MARK: Custom Function
 extension HomeVC {
-    func setUpNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardwillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardwillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
     // 캘린더 기본 Setting
     func setUpCalendar() {
         calendarView.delegate = self
         
-        calendarView.layer.cornerRadius = 10
-        calendarView.layer.shadowColor = UIColor.label.cgColor
-        calendarView.layer.shadowRadius = 2
-        calendarView.layer.shadowOffset = CGSize(width: 0, height: 4)
-        calendarView.layer.shadowOpacity = 0.3
-        
+        calendarView.layer.cornerRadius = 40
+        calendarView.backgroundColor = .clear
         calendarView.headerHeight = 0
-
         currentDate.text = self.dateFormatter.string(from: calendarView.currentPage)
         
         // 요일 Title
@@ -119,18 +115,38 @@ extension HomeVC {
         calendarView.appearance.selectionColor = .white
         calendarView.appearance.borderSelectionColor = UIColor.lightGray
         calendarView.appearance.titleSelectionColor = .label
-        
         calendarView.appearance.titleDefaultColor = UIColor.label
         calendarView.appearance.titlePlaceholderColor = .lightGray
+        
+        // panGesture - 캘린더 상하 스크롤
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(calendarViewVerticalScroll))
+        calendarView.addGestureRecognizer(panGesture)
+    }
+    
+    func setUpCalendarBackground() {
+        backgroundView.backgroundColor = .systemGray6
+        backgroundView.layer.cornerRadius = 40
+        backgroundView.layer.borderWidth = 1
+        backgroundView.layer.borderColor = UIColor.systemGray3.cgColor
     }
     
     // subjectCV Setting
     func setUpSubjectCV() {
+        subjectCV.dataSource = self
+        subjectCV.delegate = self
+        
         subjectCV.alwaysBounceVertical = true
         subjectCV.allowsSelection = false
+        subjectCV.showsVerticalScrollIndicator = false
     }
     
-    // Next, Prev Month 이동
+    // keyboard Notification Setting
+    func setUpNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardwillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(KeyBoardwillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // calendar가 month일 때 Next, Prev Month 이동
     func scrollCurrentPage(isPrev: Bool) {
         let cal = Calendar.current
         var dateComponents = DateComponents()
@@ -138,8 +154,8 @@ extension HomeVC {
         currentPage = cal.date(byAdding: dateComponents, to: currentPage ?? today)
         calendarView.setCurrentPage(currentPage!, animated: true)
     }
-    
-    //MARK: test
+
+    // calendar가 week일 때 Next, Prev Week 이동
     func scrollWeekPage(isPrev: Bool) {
         let cal = Calendar.current
         var dateComponents = DateComponents()
@@ -148,10 +164,18 @@ extension HomeVC {
         calendarView.setCurrentPage(currentPage!, animated: true)
     }
     
-    // CollectionView DataSource, Delegate Setting
-    func setUpDelegate() {
-        subjectCV.dataSource = self
-        subjectCV.delegate = self
+    // calendar을 week로 바꾸는 함수
+    func setCalendarToWeek() {
+        calendarView.setScope(.week, animated: true)
+        weekMonthChangeBtn.setTitle("월", for: .normal)
+        self.view.endEditing(true)
+    }
+    
+    // calendar을 month로 바꾸는 함수
+    func setCalendarToMonth() {
+        calendarView.setScope(.month, animated: true)
+        weekMonthChangeBtn.setTitle("주", for: .normal)
+        self.view.endEditing(true)
     }
 }
 
@@ -202,12 +226,9 @@ extension HomeVC: UICollectionViewDelegate {
         // 그냥 아래로 스크롤하면 주로 바뀜
         // 주인 상태에서 스크롤 가능
         if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
-            calendarView.setScope(.week, animated: true)
-            weekMonthChangeBtn.setTitle("월", for: .normal)
+            setCalendarToWeek()
         } else if scrollView.contentOffset.y < 0 || scrollView.panGestureRecognizer.translation(in: scrollView).y > 200 {
-            calendarView.setScope(.month, animated: true)
-            weekMonthChangeBtn.setTitle("주", for: .normal)
-            self.view.endEditing(true)
+            setCalendarToMonth()
         }
     }
 }
