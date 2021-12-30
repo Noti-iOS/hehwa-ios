@@ -28,7 +28,11 @@ class LoginVC: UIViewController {
         let vc = ViewControllerFactory.viewController(for: .tabBar)
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
-        
+    }
+    @IBAction func moveSignup(_ sender: Any) {
+        let vc = ViewControllerFactory.viewController(for: .signup)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

@@ -29,8 +29,8 @@
 		23549B1D276E0A6F00B61691 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B1C276E0A6F00B61691 /* HomeVC.swift */; };
 		23549B21276E0ABB00B61691 /* ChattingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B20276E0ABB00B61691 /* ChattingVC.swift */; };
 		23549B27276E0AE900B61691 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B26276E0AE900B61691 /* MyPageVC.swift */; };
-		4C66F06E2779937100A678E2 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C66F06D2779937100A678E2 /* SigninVC.swift */; };
-		4C66F0702779939100A678E2 /* Signin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C66F06F2779939100A678E2 /* Signin.storyboard */; };
+		4C66F06E2779937100A678E2 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C66F06D2779937100A678E2 /* SignupVC.swift */; };
+		4C66F0702779939100A678E2 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C66F06F2779939100A678E2 /* Signup.storyboard */; };
 		4CA3907B277B191A009C5B0B /* MemoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3907A277B1919009C5B0B /* MemoCVC.swift */; };
 		4CA3907D277B1954009C5B0B /* SubjectListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3907C277B1953009C5B0B /* SubjectListCVC.swift */; };
 		4CA3907F277B195E009C5B0B /* HomeworkListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3907E277B195E009C5B0B /* HomeworkListTVC.swift */; };
@@ -65,8 +65,8 @@
 		23549B20276E0ABB00B61691 /* ChattingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingVC.swift; sourceTree = "<group>"; };
 		23549B23276E0ACE00B61691 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		23549B26276E0AE900B61691 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
-		4C66F06D2779937100A678E2 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
-		4C66F06F2779939100A678E2 /* Signin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signin.storyboard; sourceTree = "<group>"; };
+		4C66F06D2779937100A678E2 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		4C66F06F2779939100A678E2 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		4CA3907A277B1919009C5B0B /* MemoCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoCVC.swift; sourceTree = "<group>"; };
 		4CA3907C277B1953009C5B0B /* SubjectListCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectListCVC.swift; sourceTree = "<group>"; };
 		4CA3907E277B195E009C5B0B /* HomeworkListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkListTVC.swift; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 				2326B35A2761EC8000677E7F /* Home */,
 				2326B35B2761EC8B00677E7F /* Chatting */,
 				23549B19276E0A1400B61691 /* MyPage */,
-				4C66F06A277992E500A678E2 /* Signin */,
+				4C66F06A277992E500A678E2 /* Signup */,
 				2326B35C2761EC9400677E7F /* Login */,
 			);
 			path = Screen;
@@ -373,19 +373,19 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		4C66F06A277992E500A678E2 /* Signin */ = {
+		4C66F06A277992E500A678E2 /* Signup */ = {
 			isa = PBXGroup;
 			children = (
 				4C66F06B2779934400A678E2 /* Storyboard */,
 				4C66F06C2779934C00A678E2 /* Controller */,
 			);
-			path = Signin;
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		4C66F06B2779934400A678E2 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				4C66F06F2779939100A678E2 /* Signin.storyboard */,
+				4C66F06F2779939100A678E2 /* Signup.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -393,7 +393,7 @@
 		4C66F06C2779934C00A678E2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4C66F06D2779937100A678E2 /* SigninVC.swift */,
+				4C66F06D2779937100A678E2 /* SignupVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -473,7 +473,7 @@
 				2304DE26276E2CD300AD0691 /* Login.storyboard in Resources */,
 				2300658E277B291D00F117D8 /* AppleSDGothicNeoR.ttf in Resources */,
 				2300658F277B291D00F117D8 /* AppleSDGothicNeoB.ttf in Resources */,
-				4C66F0702779939100A678E2 /* Signin.storyboard in Resources */,
+				4C66F0702779939100A678E2 /* Signup.storyboard in Resources */,
 				2304DE29276E335E00AD0691 /* Assets.xcassets in Resources */,
 				23006590277B291D00F117D8 /* AppleSDGothicNeoSB.ttf in Resources */,
 				2304DE22276E1ABA00AD0691 /* Home.storyboard in Resources */,
@@ -546,7 +546,7 @@
 				2326B36D2761EDD600677E7F /* StoryboardRepresentation.swift in Sources */,
 				23549B10276E014E00B61691 /* MainTBC.swift in Sources */,
 				2326B36F2761EDEF00677E7F /* TypeOfViewController.swift in Sources */,
-				4C66F06E2779937100A678E2 /* SigninVC.swift in Sources */,
+				4C66F06E2779937100A678E2 /* SignupVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
