@@ -1,16 +1,42 @@
 PODS:
+  - Alamofire (5.5.0)
+  - AppAuth (1.4.0):
+    - AppAuth/Core (= 1.4.0)
+    - AppAuth/ExternalUserAgent (= 1.4.0)
+  - AppAuth/Core (1.4.0)
+  - AppAuth/ExternalUserAgent (1.4.0)
   - FSCalendar (2.8.2)
+  - GoogleSignIn (6.1.0):
+    - AppAuth (~> 1.4)
+    - GTMAppAuth (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GTMAppAuth (1.2.2):
+    - AppAuth/Core (~> 1.4)
+    - GTMSessionFetcher/Core (~> 1.5)
+  - GTMSessionFetcher/Core (1.7.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.5)
   - FSCalendar
+  - GoogleSignIn
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - AppAuth
     - FSCalendar
+    - GoogleSignIn
+    - GTMAppAuth
+    - GTMSessionFetcher
 
 SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
+  GoogleSignIn: c90b5bec45e780f54c6a8e1e3c182a86e3dda69d
+  GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
+  GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
 
-PODFILE CHECKSUM: 861128de6b4efafff65a1b74a19d5c1a560fdb91
+PODFILE CHECKSUM: 0bb555b39a5b79b9a603ce3d56ad25fc8e91a3c2
 
 COCOAPODS: 1.11.2
