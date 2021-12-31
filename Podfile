@@ -7,6 +7,7 @@ target 'IOS_Study' do
 
   # Pods for IOS_Study
   pod 'FSCalendar'
+  pod 'KakaoSDK'
   pod 'Alamofire', '~> 5.5'
   pod 'GoogleSignIn'
 end

@@ -14,11 +14,44 @@ PODS:
     - AppAuth/Core (~> 1.4)
     - GTMSessionFetcher/Core (~> 1.5)
   - GTMSessionFetcher/Core (1.7.0)
+  - KakaoSDK (2.8.4):
+    - KakaoSDKAuth (= 2.8.4)
+    - KakaoSDKCommon (= 2.8.4)
+    - KakaoSDKLink (= 2.8.4)
+    - KakaoSDKNavi (= 2.8.4)
+    - KakaoSDKStory (= 2.8.4)
+    - KakaoSDKTalk (= 2.8.4)
+    - KakaoSDKTemplate (= 2.8.4)
+    - KakaoSDKUser (= 2.8.4)
+  - KakaoSDKAuth (2.8.4):
+    - KakaoSDKCommon (= 2.8.4)
+  - KakaoSDKCommon (2.8.4):
+    - KakaoSDKCommon/Common (= 2.8.4)
+    - KakaoSDKCommon/Network (= 2.8.4)
+  - KakaoSDKCommon/Common (2.8.4)
+  - KakaoSDKCommon/Network (2.8.4):
+    - Alamofire (~> 5.1)
+    - KakaoSDKCommon/Common (= 2.8.4)
+  - KakaoSDKLink (2.8.4):
+    - KakaoSDKCommon (= 2.8.4)
+    - KakaoSDKTemplate (= 2.8.4)
+  - KakaoSDKNavi (2.8.4):
+    - KakaoSDKCommon/Common (= 2.8.4)
+  - KakaoSDKStory (2.8.4):
+    - KakaoSDKUser (= 2.8.4)
+  - KakaoSDKTalk (2.8.4):
+    - KakaoSDKTemplate (= 2.8.4)
+    - KakaoSDKUser (= 2.8.4)
+  - KakaoSDKTemplate (2.8.4):
+    - KakaoSDKCommon/Common (= 2.8.4)
+  - KakaoSDKUser (2.8.4):
+    - KakaoSDKAuth (= 2.8.4)
 
 DEPENDENCIES:
   - Alamofire (~> 5.5)
   - FSCalendar
   - GoogleSignIn
+  - KakaoSDK
 
 SPEC REPOS:
   trunk:
@@ -28,6 +61,15 @@ SPEC REPOS:
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
+    - KakaoSDK
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKLink
+    - KakaoSDKNavi
+    - KakaoSDKStory
+    - KakaoSDKTalk
+    - KakaoSDKTemplate
+    - KakaoSDKUser
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
@@ -36,7 +78,16 @@ SPEC CHECKSUMS:
   GoogleSignIn: c90b5bec45e780f54c6a8e1e3c182a86e3dda69d
   GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
+  KakaoSDK: f80dbd5e4e8db058c9f1cd48356329f11fd6e281
+  KakaoSDKAuth: b9b693995f98b1821ccd22b39d383e1dede5ca45
+  KakaoSDKCommon: 33c9902ee9ce13e9d1cac3549896406229836ff5
+  KakaoSDKLink: 588e425cb30df37b3404662170f2d0bdda7af7ae
+  KakaoSDKNavi: 46060633e4a41682bb8ed086372526412fcffda2
+  KakaoSDKStory: b1d287251c6c35dcf7b04e94e3107b6cc7236495
+  KakaoSDKTalk: ac4d2ec8b7323a50f98d74e6358fc8a296107566
+  KakaoSDKTemplate: 23ff3023d189f0962d28e34627a19c0eb8c1c7a6
+  KakaoSDKUser: d878977e0ba6b365cfeac3b6319cdf4231713bea
 
-PODFILE CHECKSUM: 0bb555b39a5b79b9a603ce3d56ad25fc8e91a3c2
+PODFILE CHECKSUM: e1c547ca3ce51f761b113d6bc33f3f2c1ee9032d
 
 COCOAPODS: 1.11.2
