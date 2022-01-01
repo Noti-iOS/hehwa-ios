@@ -26,10 +26,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3g-xg-DBw">
-                                <rect key="frame" x="0.0" y="-44" width="414" height="552"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="508"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bar" translatesAutoresizingMaskIntoConstraints="NO" id="207-8L-Sba">
-                                        <rect key="frame" x="186.5" y="539" width="41" height="5"/>
+                                        <rect key="frame" x="186.5" y="495" width="41" height="5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="5" id="84n-Te-tys"/>
                                             <constraint firstAttribute="width" constant="41" id="LpY-ZE-s8g"/>
@@ -280,7 +280,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="175"/>
                                         <connections>
-                                            <outlet property="memoTF" destination="mav-CH-axj" id="hDf-C4-Qun"/>
+                                            <outlet property="memoTV" destination="mav-CH-axj" id="hDf-C4-Qun"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -288,6 +288,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="oec-8F-jdt" firstAttribute="top" secondItem="s3g-xg-DBw" secondAttribute="bottom" id="0ED-nJ-fma"/>
                             <constraint firstItem="oec-8F-jdt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0dx-tR-zCl"/>
@@ -301,7 +302,7 @@
                             <constraint firstItem="BWF-yU-JNJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="43" id="BTt-m2-fxx"/>
                             <constraint firstItem="s3g-xg-DBw" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="BWv-VY-hY2"/>
                             <constraint firstItem="EoR-AD-Y38" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="23" id="GCn-CI-tMI"/>
-                            <constraint firstItem="s3g-xg-DBw" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="-44" id="PCR-6K-fap"/>
+                            <constraint firstItem="s3g-xg-DBw" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="PCR-6K-fap"/>
                             <constraint firstItem="m54-Fq-mCc" firstAttribute="top" secondItem="BCd-b3-2xh" secondAttribute="bottom" constant="6" id="WPg-pL-Yyd"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7sz-iR-PO5" secondAttribute="trailing" constant="23" id="YhP-ab-FB6"/>
                             <constraint firstItem="e4V-bK-ny6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="23" id="ZhJ-fu-jdS"/>
