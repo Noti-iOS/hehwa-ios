@@ -15,6 +15,9 @@ class HomeVC: UIViewController {
         Subjects("영어", "호준T", ["단어 Day 7 암기", "영어 문법(초록책) p20~24", "수능특강 p11~14"]),
         Subjects("과학", "은희T", ["p51~60", "주기율표 암기"])
     ]
+    // 임시 숙제 있는 날 데이터
+    let homeworkDay = ["20220101","20220112","20220121","20220125"]
+    let homeworkDay_Done = ["20220112","20220124","20220117","20220127"]
     
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var currentDate: UILabel!
@@ -25,9 +28,14 @@ class HomeVC: UIViewController {
     
     var currentPage: Date?
     private lazy var today: Date = { return Date() }()
-    private lazy var dateFormatter: DateFormatter = {
+    private lazy var monthDateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "MMM, yyyy"
+        return df
+    }()
+    private lazy var dayDateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyyMMdd"
         return df
     }()
     
@@ -116,29 +124,34 @@ extension HomeVC {
         // tabGesture - 화면 탭하면 키보드 dismiss
         let dismissKeyboardTabGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard(_:)))
         view.addGestureRecognizer(dismissKeyboardTabGesture)
-//        self.subjectCV.addGestureRecognizer(dismissKeyboardTabGesture)
     }
     
     // 캘린더 기본 Setting
     func setUpCalendar() {
         calendarView.delegate = self
+        calendarView.dataSource = self
         
         calendarView.layer.cornerRadius = 40
         calendarView.backgroundColor = .clear
         calendarView.headerHeight = 0
-        currentDate.text = self.dateFormatter.string(from: calendarView.currentPage)
+        currentDate.text = self.monthDateFormatter.string(from: calendarView.currentPage)
         
-        // 요일 Title
+        // S M T W T F S Setting
         calendarView.appearance.caseOptions = FSCalendarCaseOptions.weekdayUsesSingleUpperCase
         calendarView.appearance.weekdayTextColor = .label
         calendarView.appearance.weekdayFont = UIFont.boldSystemFont(ofSize: 14)
         
+        calendarView.appearance.titleFont = UIFont.systemFont(ofSize: 16)
+        
         // 선택된 날 appearance
-        calendarView.appearance.selectionColor = .white
-        calendarView.appearance.borderSelectionColor = UIColor.lightGray
-        calendarView.appearance.titleSelectionColor = .label
-        calendarView.appearance.titleDefaultColor = UIColor.label
+        calendarView.appearance.selectionColor = #colorLiteral(red: 0.4664905667, green: 0.5537653565, blue: 0.8611391187, alpha: 1)
+        calendarView.appearance.titleDefaultColor = .label
+        
+        // 이번달 아닌 날
         calendarView.appearance.titlePlaceholderColor = .lightGray
+        
+        // today appearance
+        calendarView.appearance.todayColor = .systemGray3
     }
     
     // upside ScrollView_ bottom sheet같은(?)
@@ -171,6 +184,7 @@ extension HomeVC {
         var dateComponents = DateComponents()
         dateComponents.month = isPrev ? -1 : 1
         currentPage = cal.date(byAdding: dateComponents, to: currentPage ?? today)
+        calendarView.select(currentPage)
         calendarView.setCurrentPage(currentPage!, animated: true)
     }
 
@@ -180,6 +194,7 @@ extension HomeVC {
         var dateComponents = DateComponents()
         dateComponents.weekOfMonth = isPrev ? -1 : 1
         currentPage = cal.date(byAdding: dateComponents, to: currentPage ?? today)
+        calendarView.select(currentPage)
         calendarView.setCurrentPage(currentPage!, animated: true)
     }
     
@@ -198,11 +213,24 @@ extension HomeVC {
     }
 }
 
+//MARK: FSCalendarDataSource
+extension HomeVC: FSCalendarDataSource {
+    // 이벤트 밑에 Dot 표시 개수
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        if self.homeworkDay.contains(dayDateFormatter.string(from: date)){
+            return 1
+        }
+        if self.homeworkDay_Done.contains(dayDateFormatter.string(from: date)){
+            return 1
+        }
+        return 0
+    }
+}
 //MARK: FSCalendarDelegate
 extension HomeVC: FSCalendarDelegate {
     // Title Month-Year Setting
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        currentDate.text = self.dateFormatter.string(from: calendar.currentPage)
+        currentDate.text = self.monthDateFormatter.string(from: calendar.currentPage)
     }
     // Week-Month Calendar Height Setting
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
@@ -211,7 +239,30 @@ extension HomeVC: FSCalendarDelegate {
     }
     // 선택된 날에 맞춰 숙제 목록 & 메모 Setting
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(date, today)
+        
+    }
+}
+//MARK: FSCalendarDelegateAppearance
+extension HomeVC: FSCalendarDelegateAppearance {
+    // Default Event Dot 색상 분기처리
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]?{
+        if homeworkDay.contains(dayDateFormatter.string(from: date)){
+            return [UIColor.red]
+        }
+        if homeworkDay_Done.contains(dayDateFormatter.string(from: date)){
+            return [UIColor.systemGray2]
+        }
+        return nil
+    }
+    // Selected Event Dot 색상 분기처리
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventSelectionColorsFor date: Date) -> [UIColor]? {
+        if homeworkDay.contains(dayDateFormatter.string(from: date)){
+            return [UIColor.red]
+        }
+        if homeworkDay_Done.contains(dayDateFormatter.string(from: date)){
+            return [UIColor.systemGray2]
+        }
+        return nil
     }
 }
 
