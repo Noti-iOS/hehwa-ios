@@ -131,7 +131,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="9jB-gS-zJA"/>
                     <connections>
-                        <outlet property="MenuListTV" destination="Tzh-N7-oMe" id="vgx-3l-kgY"/>
+                        <outlet property="menuListTV" destination="Tzh-N7-oMe" id="vgx-3l-kgY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
