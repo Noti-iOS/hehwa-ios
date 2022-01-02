@@ -42,7 +42,6 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setUpNavigationBar()
         setUpHomeViewGesture()
         setUpCalendarBackground()
         setUpCalendar()

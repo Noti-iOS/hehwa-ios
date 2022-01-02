@@ -8,15 +8,30 @@
 import UIKit
 
 class SideMenuVC: UIViewController {
-    @IBOutlet weak var etcTV: UITableView!
+    @IBOutlet weak var MenuListTV: UITableView!
+    
+    let menuList = ["버전 정보", "로그아웃", "과외 정보", "회원 정보 수정"]
+    let menuIcon = [UIImage(named: "Menu_Version"), UIImage(named: "Menu_Logout"), UIImage(named: "Menu_info"), UIImage(named: "Menu_Setting")]
     
     override func viewDidLoad() {
-        view.backgroundColor = .systemGray6
-        etcTV.dataSource = self
-        etcTV.backgroundColor = .systemGray6
-        etcTV.isScrollEnabled = false
+        setUpView()
+        setUpEtcTV()
     }
 }
+//MARK: Custom Function
+extension SideMenuVC {
+    func setUpView() {
+        view.backgroundColor = .systemGray6
+    }
+    
+    func setUpEtcTV() {
+        MenuListTV.dataSource = self
+        
+        MenuListTV.backgroundColor = .systemGray6
+        MenuListTV.isScrollEnabled = false
+    }
+}
+
 // MARK:UITableViewDataSource
 extension SideMenuVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,9 +39,10 @@ extension SideMenuVC: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = etcTV.dequeueReusableCell(withIdentifier: Identifiers.etcTVC, for: indexPath)
+        let cell = MenuListTV.dequeueReusableCell(withIdentifier: Identifiers.menuListTVC, for: indexPath) as! MenuListTVC
         cell.backgroundColor = .systemGray6
-        cell.widthAnchor.constraint(equalToConstant: etcTV.frame.width).isActive = true
+        cell.menuTitle.text = menuList[indexPath.row]
+        cell.menuIcon.image = menuIcon[indexPath.row]
         return cell
     }
 }

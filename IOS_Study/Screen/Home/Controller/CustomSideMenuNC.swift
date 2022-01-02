@@ -12,6 +12,8 @@ class CustomSideMenuNC: SideMenuNavigationController {
     
     override func viewDidLoad() {
         presentationStyle = .menuSlideIn
+        presentationStyle.backgroundColor = .black
+        presentationStyle.presentingEndAlpha = 0.3
         menuWidth = view.frame.width - 100
     }
 }
