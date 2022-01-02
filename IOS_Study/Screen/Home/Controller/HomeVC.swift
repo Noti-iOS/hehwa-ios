@@ -7,6 +7,7 @@
 
 import UIKit
 import FSCalendar
+import SideMenu
 
 class HomeVC: UIViewController {
     // 임시 Subject 데이터
@@ -41,6 +42,7 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        setUpNavigationBar()
         setUpHomeViewGesture()
         setUpCalendarBackground()
         setUpCalendar()
@@ -49,6 +51,17 @@ class HomeVC: UIViewController {
     }
     
     //MARK: IBAction
+    // menu Btn
+    @IBAction func openSideMenu(_ sender: Any) {
+        guard let sideMenuVC = UIStoryboard(name: Identifiers.sideMenuSB, bundle: nil).instantiateViewController(withIdentifier: Identifiers.sideMenuNC) as? SideMenuNavigationController else {return}
+        sideMenuVC.presentationStyle.onTopShadowColor = .black
+        sideMenuVC.presentationStyle.onTopShadowOpacity = 0.5
+        sideMenuVC.presentationStyle.onTopShadowOffset = CGSize(width: 0, height: 0)
+        sideMenuVC.presentationStyle.onTopShadowRadius = 10
+        
+        present(sideMenuVC, animated: true, completion: nil)
+    }
+    
     // 월-주 Change Btn
     @IBAction func changeWeekMonth(_ sender: Any) {
         if calendarView.scope == .week {
