@@ -7,5 +7,6 @@ target 'IOS_Study' do
 
   # Pods for IOS_Study
   pod 'FSCalendar'
+  pod 'SideMenu'
 
 end

@@ -29,6 +29,10 @@
 		23549B1D276E0A6F00B61691 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B1C276E0A6F00B61691 /* HomeVC.swift */; };
 		23549B21276E0ABB00B61691 /* ChattingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B20276E0ABB00B61691 /* ChattingVC.swift */; };
 		23549B27276E0AE900B61691 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B26276E0AE900B61691 /* MyPageVC.swift */; };
+		23AB78DD2781C4CF00DEC224 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB78DC2781C4CF00DEC224 /* SideMenuVC.swift */; };
+		23AB78DF2781C7DE00DEC224 /* CustomSideMenuNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB78DE2781C7DE00DEC224 /* CustomSideMenuNC.swift */; };
+		23C0B56B2781EAB800735DD9 /* MenuListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C0B56A2781EAB800735DD9 /* MenuListTVC.swift */; };
+		23EFC4E42780C03F000CCAE4 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFC4E32780C03F000CCAE4 /* SideMenu.storyboard */; };
 		4C66F06E2779937100A678E2 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C66F06D2779937100A678E2 /* SigninVC.swift */; };
 		4C66F0702779939100A678E2 /* Signin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C66F06F2779939100A678E2 /* Signin.storyboard */; };
 		4CA3907B277B191A009C5B0B /* MemoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3907A277B1919009C5B0B /* MemoCVC.swift */; };
@@ -65,6 +69,10 @@
 		23549B20276E0ABB00B61691 /* ChattingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingVC.swift; sourceTree = "<group>"; };
 		23549B23276E0ACE00B61691 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		23549B26276E0AE900B61691 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
+		23AB78DC2781C4CF00DEC224 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
+		23AB78DE2781C7DE00DEC224 /* CustomSideMenuNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuNC.swift; sourceTree = "<group>"; };
+		23C0B56A2781EAB800735DD9 /* MenuListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListTVC.swift; sourceTree = "<group>"; };
+		23EFC4E32780C03F000CCAE4 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		4C66F06D2779937100A678E2 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		4C66F06F2779939100A678E2 /* Signin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signin.storyboard; sourceTree = "<group>"; };
 		4CA3907A277B1919009C5B0B /* MemoCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoCVC.swift; sourceTree = "<group>"; };
@@ -266,6 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				23549B1C276E0A6F00B61691 /* HomeVC.swift */,
+				23AB78DC2781C4CF00DEC224 /* SideMenuVC.swift */,
+				23AB78DE2781C7DE00DEC224 /* CustomSideMenuNC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -274,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				23549B1A276E0A5D00B61691 /* Home.storyboard */,
+				23EFC4E32780C03F000CCAE4 /* SideMenu.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -300,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				4CA3907E277B195E009C5B0B /* HomeworkListTVC.swift */,
+				23C0B56A2781EAB800735DD9 /* MenuListTVC.swift */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -477,6 +489,7 @@
 				2304DE29276E335E00AD0691 /* Assets.xcassets in Resources */,
 				23006590277B291D00F117D8 /* AppleSDGothicNeoSB.ttf in Resources */,
 				2304DE22276E1ABA00AD0691 /* Home.storyboard in Resources */,
+				23EFC4E42780C03F000CCAE4 /* SideMenu.storyboard in Resources */,
 				23006591277B291D00F117D8 /* AppleSDGothicNeoM.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +549,7 @@
 				232D1C49277A018800F4A3FC /* UITextView+.swift in Sources */,
 				232D1C47277A008F00F4A3FC /* UITextField+.swift in Sources */,
 				4CA3907F277B195E009C5B0B /* HomeworkListTVC.swift in Sources */,
+				23AB78DF2781C7DE00DEC224 /* CustomSideMenuNC.swift in Sources */,
 				4CA3907D277B1954009C5B0B /* SubjectListCVC.swift in Sources */,
 				23549B1D276E0A6F00B61691 /* HomeVC.swift in Sources */,
 				2304DE1A276E0E3400AD0691 /* AppDelegate.swift in Sources */,
@@ -544,8 +558,10 @@
 				4CA3907B277B191A009C5B0B /* MemoCVC.swift in Sources */,
 				23549B21276E0ABB00B61691 /* ChattingVC.swift in Sources */,
 				2326B36D2761EDD600677E7F /* StoryboardRepresentation.swift in Sources */,
+				23AB78DD2781C4CF00DEC224 /* SideMenuVC.swift in Sources */,
 				23549B10276E014E00B61691 /* MainTBC.swift in Sources */,
 				2326B36F2761EDEF00677E7F /* TypeOfViewController.swift in Sources */,
+				23C0B56B2781EAB800735DD9 /* MenuListTVC.swift in Sources */,
 				4C66F06E2779937100A678E2 /* SigninVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
