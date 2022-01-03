@@ -60,7 +60,7 @@ extension SideMenuVC: UITableViewDelegate {
             print("버전 정보")
         case 1:
             let logoutAC = UIAlertController(title: "", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
-            logoutAC.view.tintColor = .white
+            logoutAC.view.tintColor = .label
             let logout = UIAlertAction(title: "로그아웃", style: .destructive) { (action) in
                 print("로그아웃")
             }

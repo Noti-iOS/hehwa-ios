@@ -23,6 +23,8 @@
 		2326B36F2761EDEF00677E7F /* TypeOfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326B36E2761EDEF00677E7F /* TypeOfViewController.swift */; };
 		232D1C47277A008F00F4A3FC /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D1C46277A008F00F4A3FC /* UITextField+.swift */; };
 		232D1C49277A018800F4A3FC /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D1C48277A018800F4A3FC /* UITextView+.swift */; };
+		2332BBD2278336AC00290B95 /* CustomNB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2332BBD1278336AC00290B95 /* CustomNB.swift */; };
+		2332BBD6278339E400290B95 /* CustomNB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2332BBD5278339E400290B95 /* CustomNB.xib */; };
 		23549B10276E014E00B61691 /* MainTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B0F276E014E00B61691 /* MainTBC.swift */; };
 		23549B12276E019100B61691 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B11276E019100B61691 /* ViewControllerFactory.swift */; };
 		23549B14276E06D500B61691 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B13276E06D500B61691 /* Identifiers.swift */; };
@@ -59,6 +61,8 @@
 		2326B36E2761EDEF00677E7F /* TypeOfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfViewController.swift; sourceTree = "<group>"; };
 		232D1C46277A008F00F4A3FC /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		232D1C48277A018800F4A3FC /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
+		2332BBD1278336AC00290B95 /* CustomNB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNB.swift; sourceTree = "<group>"; };
+		2332BBD5278339E400290B95 /* CustomNB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNB.xib; sourceTree = "<group>"; };
 		23549B0F276E014E00B61691 /* MainTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTBC.swift; sourceTree = "<group>"; };
 		23549B11276E019100B61691 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		23549B13276E06D500B61691 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 		2326B3532761EB9200677E7F /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				2332BBBE27832DCA00290B95 /* NavigationBar */,
 				23549B0E276E010100B61691 /* TabBar */,
 				2326B35A2761EC8000677E7F /* Home */,
 				2326B35B2761EC8B00677E7F /* Chatting */,
@@ -335,6 +340,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		2332BBBE27832DCA00290B95 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				2332BBD1278336AC00290B95 /* CustomNB.swift */,
+				2332BBD5278339E400290B95 /* CustomNB.xib */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
 		23549B0E276E010100B61691 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +496,7 @@
 				2304DE24276E1AD500AD0691 /* Chatting.storyboard in Resources */,
 				2304DE21276E19F500AD0691 /* TabBar.storyboard in Resources */,
 				2304DE23276E1AD000AD0691 /* MyPage.storyboard in Resources */,
+				2332BBD6278339E400290B95 /* CustomNB.xib in Resources */,
 				2304DE26276E2CD300AD0691 /* Login.storyboard in Resources */,
 				2300658E277B291D00F117D8 /* AppleSDGothicNeoR.ttf in Resources */,
 				2300658F277B291D00F117D8 /* AppleSDGothicNeoB.ttf in Resources */,
@@ -551,6 +566,7 @@
 				4CA3907F277B195E009C5B0B /* HomeworkListTVC.swift in Sources */,
 				23AB78DF2781C7DE00DEC224 /* CustomSideMenuNC.swift in Sources */,
 				4CA3907D277B1954009C5B0B /* SubjectListCVC.swift in Sources */,
+				2332BBD2278336AC00290B95 /* CustomNB.swift in Sources */,
 				23549B1D276E0A6F00B61691 /* HomeVC.swift in Sources */,
 				2304DE1A276E0E3400AD0691 /* AppDelegate.swift in Sources */,
 				23549B27276E0AE900B61691 /* MyPageVC.swift in Sources */,
