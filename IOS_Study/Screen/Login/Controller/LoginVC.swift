@@ -103,7 +103,31 @@ extension LoginVC{
         kakaoLogin.layer.shadowOpacity = 0.5
         kakaoLogin.layer.shadowOffset = CGSize(width: 0, height: 1)
     }
+    // function for login
+    // validation
+    func isValidEmail(email: String?) -> Bool {
+              let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+              let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+              return emailTest.evaluate(with: email)
+    }
+    
+    func isValidPasswordLogin(pwd: String?) -> Bool {
+        if let hasPassword = pwd {
+            if hasPassword.count < 8{
+                return false
+            }
+        }
+        return true
+    }
+
+    
+    func isValidPassword(pwd: String?) -> Bool {
+            let passwordRegEx = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,20}"
+            let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
+            return passwordTest.evaluate(with: pwd)
+    }
 }
 
-// MARK: - Custom Method
+// MARK: function for login
+
 
