@@ -12,9 +12,12 @@ class HomeVC: UIViewController {
     // 임시 Subject 데이터
     let subjects = [
         Subjects("수학", "윤경T", ["쎈 수학 p110~120", "곱셈공식 암기"]),
-        Subjects("영어", "호준T", ["단어 Day 7 암기", "영어 문법(초록책) p20~24", "수능특강 p11~14","a","b","c"]),
+        Subjects("영어", "호준T", ["단어 Day 7 암기", "영어 문법(초록책) p20~24", "수능특강 p11~14"]),
         Subjects("과학", "은희T", ["p51~60", "주기율표 암기"])
     ]
+    // 임시 숙제 있는 날 데이터
+    let homeworkDay = ["20220101","20220112","20220121","20220125"]
+    let homeworkDay_Done = ["20220112","20220124","20220117","20220127"]
     
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var currentDate: UILabel!
@@ -25,22 +28,24 @@ class HomeVC: UIViewController {
     
     var currentPage: Date?
     private lazy var today: Date = { return Date() }()
-    private lazy var dateFormatter: DateFormatter = {
+    private lazy var monthDateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "MMM, yyyy"
+        return df
+    }()
+    private lazy var dayDateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyyMMdd"
         return df
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpHomeViewGesture()
         setUpCalendarBackground()
         setUpCalendar()
         setUpSubjectCV()
         setUpNotification()
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-        self.view.endEditing(true)
     }
     
     //MARK: IBAction
@@ -69,6 +74,7 @@ class HomeVC: UIViewController {
         }
     }
     
+    // 키보드 나올때
     @objc func KeyBoardwillShow(_ notificatoin : Notification ){
         let keyboardSize = (notificatoin.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let height = keyboardSize.height - view.safeAreaInsets.bottom
@@ -78,16 +84,28 @@ class HomeVC: UIViewController {
         subjectCV.contentInset = contentInset
     }
     
+    // 키보드 사라질 때
     @objc func KeyBoardwillHide(_ notificatoin : Notification ){
         let contentInset = UIEdgeInsets.zero
         subjectCV.contentInset = contentInset
     }
     
+    // 키보드 hide
+    @objc func hideKeyboard(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            self.view.endEditing(true)
+            for textView in self.view.subviews where textView is UITextView {
+                textView.resignFirstResponder()
+            }
+        }
+        sender.cancelsTouchesInView = false
+    }
+    
     @objc func calendarViewVerticalScroll(sender: UIPanGestureRecognizer) {
-        let direction = sender.translation(in: self.view)
+        let dragPosition = sender.translation(in: self.view)
         
         //week
-        if direction.y < 0 {
+        if dragPosition.y < 0 {
             setCalendarToWeek()
         } else {
             setCalendarToMonth()
@@ -97,32 +115,46 @@ class HomeVC: UIViewController {
 
 //MARK: Custom Function
 extension HomeVC {
+    // View Gesture Setting
+    func setUpHomeViewGesture() {
+        // panGesture - 캘린더 상하 스크롤
+        let calendarVerticalScrollGesture = UIPanGestureRecognizer(target: self, action: #selector(calendarViewVerticalScroll))
+        calendarView.addGestureRecognizer(calendarVerticalScrollGesture)
+        
+        // tabGesture - 화면 탭하면 키보드 dismiss
+        let dismissKeyboardTabGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard(_:)))
+        view.addGestureRecognizer(dismissKeyboardTabGesture)
+    }
+    
     // 캘린더 기본 Setting
     func setUpCalendar() {
         calendarView.delegate = self
+        calendarView.dataSource = self
         
         calendarView.layer.cornerRadius = 40
         calendarView.backgroundColor = .clear
         calendarView.headerHeight = 0
-        currentDate.text = self.dateFormatter.string(from: calendarView.currentPage)
+        currentDate.text = self.monthDateFormatter.string(from: calendarView.currentPage)
         
-        // 요일 Title
+        // S M T W T F S Setting
         calendarView.appearance.caseOptions = FSCalendarCaseOptions.weekdayUsesSingleUpperCase
         calendarView.appearance.weekdayTextColor = .label
         calendarView.appearance.weekdayFont = UIFont.boldSystemFont(ofSize: 14)
         
+        calendarView.appearance.titleFont = UIFont.systemFont(ofSize: 16)
+        
         // 선택된 날 appearance
-        calendarView.appearance.selectionColor = .white
-        calendarView.appearance.borderSelectionColor = UIColor.lightGray
-        calendarView.appearance.titleSelectionColor = .label
-        calendarView.appearance.titleDefaultColor = UIColor.label
+        calendarView.appearance.selectionColor = #colorLiteral(red: 0.4664905667, green: 0.5537653565, blue: 0.8611391187, alpha: 1)
+        calendarView.appearance.titleDefaultColor = .label
+        
+        // 이번달 아닌 날
         calendarView.appearance.titlePlaceholderColor = .lightGray
         
-        // panGesture - 캘린더 상하 스크롤
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(calendarViewVerticalScroll))
-        calendarView.addGestureRecognizer(panGesture)
+        // today appearance
+        calendarView.appearance.todayColor = .systemGray3
     }
     
+    // upside ScrollView_ bottom sheet같은(?)
     func setUpCalendarBackground() {
         backgroundView.backgroundColor = .systemGray6
         backgroundView.layer.cornerRadius = 40
@@ -152,6 +184,7 @@ extension HomeVC {
         var dateComponents = DateComponents()
         dateComponents.month = isPrev ? -1 : 1
         currentPage = cal.date(byAdding: dateComponents, to: currentPage ?? today)
+        calendarView.select(currentPage)
         calendarView.setCurrentPage(currentPage!, animated: true)
     }
 
@@ -161,6 +194,7 @@ extension HomeVC {
         var dateComponents = DateComponents()
         dateComponents.weekOfMonth = isPrev ? -1 : 1
         currentPage = cal.date(byAdding: dateComponents, to: currentPage ?? today)
+        calendarView.select(currentPage)
         calendarView.setCurrentPage(currentPage!, animated: true)
     }
     
@@ -179,16 +213,56 @@ extension HomeVC {
     }
 }
 
+//MARK: FSCalendarDataSource
+extension HomeVC: FSCalendarDataSource {
+    // 이벤트 밑에 Dot 표시 개수
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        if self.homeworkDay.contains(dayDateFormatter.string(from: date)){
+            return 1
+        }
+        if self.homeworkDay_Done.contains(dayDateFormatter.string(from: date)){
+            return 1
+        }
+        return 0
+    }
+}
 //MARK: FSCalendarDelegate
 extension HomeVC: FSCalendarDelegate {
     // Title Month-Year Setting
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        currentDate.text = self.dateFormatter.string(from: calendar.currentPage)
+        currentDate.text = self.monthDateFormatter.string(from: calendar.currentPage)
     }
     // Week-Month Calendar Height Setting
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         calendarHeight.constant = bounds.height
         self.view.layoutIfNeeded()
+    }
+    // 선택된 날에 맞춰 숙제 목록 & 메모 Setting
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
+    }
+}
+//MARK: FSCalendarDelegateAppearance
+extension HomeVC: FSCalendarDelegateAppearance {
+    // Default Event Dot 색상 분기처리
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]?{
+        if homeworkDay.contains(dayDateFormatter.string(from: date)){
+            return [UIColor.red]
+        }
+        if homeworkDay_Done.contains(dayDateFormatter.string(from: date)){
+            return [UIColor.systemGray2]
+        }
+        return nil
+    }
+    // Selected Event Dot 색상 분기처리
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventSelectionColorsFor date: Date) -> [UIColor]? {
+        if homeworkDay.contains(dayDateFormatter.string(from: date)){
+            return [UIColor.red]
+        }
+        if homeworkDay_Done.contains(dayDateFormatter.string(from: date)){
+            return [UIColor.systemGray2]
+        }
+        return nil
     }
 }
 
@@ -203,6 +277,7 @@ extension HomeVC: UICollectionViewDataSource {
         if indexPath.row == subjects.count {
             let cell = subjectCV.dequeueReusableCell(withReuseIdentifier: Identifiers.memoCVC, for: indexPath) as! MemoCVC
             
+            // 메모 textView Size
             cell.widthAnchor.constraint(equalToConstant: subjectCV.frame.width).isActive = true
             return cell
         } else {
@@ -212,8 +287,10 @@ extension HomeVC: UICollectionViewDataSource {
             cell.teacher.text = subjects[indexPath.row].teacher
             cell.homeworkContents = subjects[indexPath.row].homework
             
+            // 숙제 목록 tableView Size
             cell.homeworkListHeight.constant = CGFloat(cell.homeworkContents.count * 45)
             cell.widthAnchor.constraint(equalToConstant: subjectCV.frame.width).isActive = true
+            
             return cell
         }
     }
