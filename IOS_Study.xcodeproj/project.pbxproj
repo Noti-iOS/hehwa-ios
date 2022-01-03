@@ -35,6 +35,8 @@
 		4CA3907D277B1954009C5B0B /* SubjectListCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3907C277B1953009C5B0B /* SubjectListCVC.swift */; };
 		4CA3907F277B195E009C5B0B /* HomeworkListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3907E277B195E009C5B0B /* HomeworkListTVC.swift */; };
 		4CA39081277B19FE009C5B0B /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA39080277B19FE009C5B0B /* Subjects.swift */; };
+		4CA390A72782BB9B009C5B0B /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390A62782BB9B009C5B0B /* Notification+.swift */; };
+		4CA390A92782BC22009C5B0B /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390A82782BC22009C5B0B /* AppController.swift */; };
 		A3B0158CC326976A62A9CACF /* Pods_IOS_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DE82466545D9BE48644D73 /* Pods_IOS_Study.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		4CA3907C277B1953009C5B0B /* SubjectListCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectListCVC.swift; sourceTree = "<group>"; };
 		4CA3907E277B195E009C5B0B /* HomeworkListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeworkListTVC.swift; sourceTree = "<group>"; };
 		4CA39080277B19FE009C5B0B /* Subjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
+		4CA390A62782BB9B009C5B0B /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
+		4CA390A82782BC22009C5B0B /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		9A8288964E3C1935BDC37774 /* Pods-IOS_Study.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS_Study.debug.xcconfig"; path = "Target Support Files/Pods-IOS_Study/Pods-IOS_Study.debug.xcconfig"; sourceTree = "<group>"; };
 		C6DE82466545D9BE48644D73 /* Pods_IOS_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -173,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				2304DE16276E0E3400AD0691 /* AppDelegate.swift */,
+				4CA390A82782BC22009C5B0B /* AppController.swift */,
 				2304DE19276E0E3400AD0691 /* Assets.xcassets */,
 				2304DE17276E0E3400AD0691 /* Info.plist */,
 			);
@@ -318,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				232D1C46277A008F00F4A3FC /* UITextField+.swift */,
+				4CA390A62782BB9B009C5B0B /* Notification+.swift */,
 				232D1C48277A018800F4A3FC /* UITextView+.swift */,
 			);
 			path = Extension;
@@ -532,12 +538,14 @@
 			files = (
 				2304DE28276E2CE200AD0691 /* LoginVC.swift in Sources */,
 				23549B12276E019100B61691 /* ViewControllerFactory.swift in Sources */,
+				4CA390A72782BB9B009C5B0B /* Notification+.swift in Sources */,
 				23549B14276E06D500B61691 /* Identifiers.swift in Sources */,
 				232D1C49277A018800F4A3FC /* UITextView+.swift in Sources */,
 				232D1C47277A008F00F4A3FC /* UITextField+.swift in Sources */,
 				4CA3907F277B195E009C5B0B /* HomeworkListTVC.swift in Sources */,
 				4CA3907D277B1954009C5B0B /* SubjectListCVC.swift in Sources */,
 				23549B1D276E0A6F00B61691 /* HomeVC.swift in Sources */,
+				4CA390A92782BC22009C5B0B /* AppController.swift in Sources */,
 				2304DE1A276E0E3400AD0691 /* AppDelegate.swift in Sources */,
 				23549B27276E0AE900B61691 /* MyPageVC.swift in Sources */,
 				4CA39081277B19FE009C5B0B /* Subjects.swift in Sources */,

@@ -12,7 +12,7 @@ class HomeVC: UIViewController {
     // 임시 Subject 데이터
     let subjects = [
         Subjects("수학", "윤경T", ["쎈 수학 p110~120", "곱셈공식 암기"]),
-        Subjects("영어", "호준T", ["단어 Day 7 암기", "영어 문법(초록책) p20~24", "수능특강 p11~14","a","b","c"]),
+        Subjects("영어", "호준T", ["단어 Day 7 암기", "영어 문법(초록책) p20~24", "수능특강 p11~14"]),
         Subjects("과학", "은희T", ["p51~60", "주기율표 암기"])
     ]
     

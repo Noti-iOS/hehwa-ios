@@ -37,6 +37,13 @@ class LoginVC: UIViewController {
 }
 
 extension LoginVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let emailText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+//        let passwordText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+        print(emailText)
+//        print(passwordText)
+        return true
+    }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor(red: 100/255, green: 119/255, blue: 211/255, alpha: 1).cgColor
@@ -47,6 +54,7 @@ extension LoginVC: UITextFieldDelegate {
         textField.layer.borderWidth = 0
         return true
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //email field에서 리턴키룰 누르면 password field로 포커스 이동
         if (textField.isEqual(inputEmail)){
@@ -75,6 +83,7 @@ extension LoginVC{
         logo.image = logoImage
         loginLabel.alpha = 0.5
         loginButton.layer.cornerRadius = 4
+        loginButton.isEnabled = false
         inputEmail.addLeftPadding(width: 10)
         inputEmail.layer.cornerRadius = 4
         inputPassword.addLeftPadding(width: 10)
