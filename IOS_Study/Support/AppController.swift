@@ -45,11 +45,10 @@ class AppController {
     }
     
     @objc private func checkLoginIn() {
-            let isSignIn = UserDefaults.standard.bool(forKey: "isSignIn") == true
-            if isSignIn {
-                setHome()
-            } else {
-                routeToLogin()
-            }
+        guard let hasJwtToken = UserDefaults.standard.string(forKey: "jwtToken") else {
+            routeToLogin()
+            return
         }
+        setHome()
+    }
 }
