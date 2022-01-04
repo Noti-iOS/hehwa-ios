@@ -125,15 +125,6 @@
                                     <action selector="moveSignup:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dYS-tX-dsi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viv-Tv-1QI">
-                                <rect key="frame" x="27" y="824" width="89" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="홈화면 이동"/>
-                                <connections>
-                                    <action selector="moveHome:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2Ep-7e-hyq"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKf-08-mz7">
                                 <rect key="frame" x="16" y="706" width="382" height="52"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -193,7 +184,6 @@
                         <outlet property="loginButton" destination="iR6-9g-kip" id="vqK-9o-og6"/>
                         <outlet property="loginLabel" destination="vfc-6h-wiw" id="txI-Zp-KsV"/>
                         <outlet property="logo" destination="Hrc-Ui-6Me" id="MXN-1m-iDr"/>
-                        <outlet property="moveHome" destination="viv-Tv-1QI" id="quF-E9-Wu8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

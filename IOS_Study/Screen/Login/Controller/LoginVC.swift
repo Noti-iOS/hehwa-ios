@@ -15,7 +15,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var appleLogin: UIButton!
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
-    @IBOutlet weak var moveHome: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +29,6 @@ class LoginVC: UIViewController {
         view.endEditing(true)
     }
     
-    // 임시 탭바 화면 이동
-    @IBAction func moveHome(_ sender: Any) {
-        let vc = ViewControllerFactory.viewController(for: .tabBar)
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
-    }
     
     @IBAction func moveSignup(_ sender: Any) {
         let vc = ViewControllerFactory.viewController(for: .signup)
