@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SigninVC: UIViewController {
+class SignupVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
