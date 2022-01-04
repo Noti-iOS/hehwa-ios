@@ -5,7 +5,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class LoginVC: UIViewController {
     @IBOutlet weak var logo: UIImageView!
@@ -132,6 +131,12 @@ extension LoginVC{
         kakaoLogin.layer.shadowRadius = 3
         kakaoLogin.layer.shadowOpacity = 0.5
         kakaoLogin.layer.shadowOffset = CGSize(width: 0, height: 1)
+        appleLogin.layer.cornerRadius = 4
+        appleLogin.layer.shadowColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+        appleLogin.layer.shadowRadius = 3
+        appleLogin.layer.shadowOpacity = 0.5
+        appleLogin.layer.shadowOffset = CGSize(width: 0, height: 1)
+        
     }
     
     // alert
