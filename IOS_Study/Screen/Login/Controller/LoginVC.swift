@@ -145,5 +145,9 @@ extension LoginVC{
 }
 
 // MARK: function for login
-
+class LoginAPI{
+    static func requestLogin(){
+        
+    }
+}
 
