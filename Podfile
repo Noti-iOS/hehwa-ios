@@ -10,4 +10,6 @@ target 'IOS_Study' do
   pod 'KakaoSDK'
   pod 'Alamofire', '~> 5.5'
   pod 'GoogleSignIn'
+  pod 'SideMenu'
+
 end

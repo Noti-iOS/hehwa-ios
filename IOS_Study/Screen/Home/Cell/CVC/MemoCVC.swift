@@ -8,7 +8,7 @@
 import UIKit
 
 class MemoCVC: UICollectionViewCell {
-    @IBOutlet weak var memoTF: UITextView!
+    @IBOutlet weak var memoTV: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,12 +18,12 @@ class MemoCVC: UICollectionViewCell {
 //MARK: Custom Function
 extension MemoCVC {
     func setMemoCell() {
-        memoTF.addPadding()
-        memoTF.text = ""
-        memoTF.font = UIFont(name: "AppleSDGothicNeoR00", size: 17)
-        memoTF.backgroundColor = .systemGray6
-        memoTF.layer.cornerRadius = 10
-        memoTF.isScrollEnabled = false
-        memoTF.heightAnchor.constraint(equalToConstant: 130).isActive = true
+        memoTV.addPadding()
+        memoTV.text = ""
+        memoTV.font = UIFont(name: "AppleSDGothicNeoR00", size: 17)
+        memoTV.backgroundColor = .systemGray6
+        memoTV.layer.cornerRadius = 10
+        memoTV.isScrollEnabled = false
+        memoTV.heightAnchor.constraint(equalToConstant: 130).isActive = true
     }
 }

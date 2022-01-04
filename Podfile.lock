@@ -46,12 +46,14 @@ PODS:
     - KakaoSDKCommon/Common (= 2.8.4)
   - KakaoSDKUser (2.8.4):
     - KakaoSDKAuth (= 2.8.4)
+  - SideMenu (6.5.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.5)
   - FSCalendar
   - GoogleSignIn
   - KakaoSDK
+  - SideMenu
 
 SPEC REPOS:
   trunk:
@@ -70,6 +72,7 @@ SPEC REPOS:
     - KakaoSDKTalk
     - KakaoSDKTemplate
     - KakaoSDKUser
+    - SideMenu
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
@@ -89,5 +92,8 @@ SPEC CHECKSUMS:
   KakaoSDKUser: d878977e0ba6b365cfeac3b6319cdf4231713bea
 
 PODFILE CHECKSUM: e1c547ca3ce51f761b113d6bc33f3f2c1ee9032d
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
+
+PODFILE CHECKSUM: 9f258d7fcc331d305296d7e4fadffcaf6dd4f61f
 
 COCOAPODS: 1.11.2
