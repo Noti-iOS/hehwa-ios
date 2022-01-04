@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomNB" customModule="IOS_Study" customModuleProvider="target">
+            <connections>
+                <outlet property="firstBtn" destination="BMk-HM-Yn5" id="FZf-ZS-NHR"/>
+                <outlet property="naviTitle" destination="3nw-oR-wFX" id="Rnv-Vn-xm1"/>
+                <outlet property="secondBtn" destination="vbd-mA-PpJ" id="rtg-Dj-h0U"/>
+                <outlet property="seperateBar" destination="h9T-ke-kJs" id="MaW-3P-CUL"/>
+                <outlet property="view" destination="AB3-JX-r91" id="cja-EQ-5s7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="AB3-JX-r91" userLabel="Content">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9T-ke-kJs">
+                    <rect key="frame" x="26" y="81" width="362" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="I6h-34-Vnl"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAVIBAR TITLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nw-oR-wFX">
+                    <rect key="frame" x="26" y="43" width="161" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="w3Y-9S-rtz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="36"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMk-HM-Yn5">
+                    <rect key="frame" x="322" y="45" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="Iyl-nB-ABf"/>
+                        <constraint firstAttribute="height" constant="24" id="LBD-rO-u3T"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="Alarm"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbd-mA-PpJ">
+                    <rect key="frame" x="364" y="45" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="6Nw-9u-gg3"/>
+                        <constraint firstAttribute="height" constant="24" id="RBT-Up-RzM"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="ETC"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="wpF-P1-aoN"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="h9T-ke-kJs" firstAttribute="top" secondItem="vbd-mA-PpJ" secondAttribute="bottom" constant="12" id="4Vc-Oc-cjT"/>
+                <constraint firstItem="h9T-ke-kJs" firstAttribute="leading" secondItem="AB3-JX-r91" secondAttribute="leading" constant="26" id="5fA-3k-xSk"/>
+                <constraint firstItem="vbd-mA-PpJ" firstAttribute="leading" secondItem="BMk-HM-Yn5" secondAttribute="trailing" constant="18" id="7Vr-wZ-60F"/>
+                <constraint firstAttribute="bottom" secondItem="h9T-ke-kJs" secondAttribute="bottom" constant="7" id="9sg-f7-c4J"/>
+                <constraint firstItem="h9T-ke-kJs" firstAttribute="top" secondItem="BMk-HM-Yn5" secondAttribute="bottom" constant="12" id="Ebe-ft-GLO"/>
+                <constraint firstItem="3nw-oR-wFX" firstAttribute="leading" secondItem="wpF-P1-aoN" secondAttribute="leading" constant="26" id="aeG-H2-xj7"/>
+                <constraint firstAttribute="trailing" secondItem="h9T-ke-kJs" secondAttribute="trailing" constant="26" id="gYg-y7-2vY"/>
+                <constraint firstItem="wpF-P1-aoN" firstAttribute="trailing" secondItem="vbd-mA-PpJ" secondAttribute="trailing" constant="26" id="ley-nm-vlE"/>
+                <constraint firstItem="h9T-ke-kJs" firstAttribute="top" secondItem="3nw-oR-wFX" secondAttribute="bottom" constant="2" id="rGC-4h-jQh"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="298.55072463768118" y="134.26339285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Alarm" width="16" height="19.666666030883789"/>
+        <image name="ETC" width="24" height="24"/>
+    </resources>
+</document>

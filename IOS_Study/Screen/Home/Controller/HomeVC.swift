@@ -20,6 +20,7 @@ class HomeVC: UIViewController {
     let homeworkDay = ["20220101","20220112","20220121","20220125"]
     let homeworkDay_Done = ["20220112","20220124","20220117","20220127"]
     
+    @IBOutlet weak var customNaviBar: CustomNB!
     @IBOutlet weak var calendarView: FSCalendar!
     @IBOutlet weak var currentDate: UILabel!
     @IBOutlet weak var weekMonthChangeBtn: UIButton!
@@ -42,6 +43,7 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNaviBar()
         setUpHomeViewGesture()
         setUpCalendarBackground()
         setUpCalendar()
@@ -50,17 +52,6 @@ class HomeVC: UIViewController {
     }
     
     //MARK: IBAction
-    // menu Btn
-    @IBAction func openSideMenu(_ sender: Any) {
-        guard let sideMenuVC = UIStoryboard(name: Identifiers.sideMenuSB, bundle: nil).instantiateViewController(withIdentifier: Identifiers.sideMenuNC) as? SideMenuNavigationController else {return}
-        sideMenuVC.presentationStyle.onTopShadowColor = .black
-        sideMenuVC.presentationStyle.onTopShadowOpacity = 0.5
-        sideMenuVC.presentationStyle.onTopShadowOffset = CGSize(width: 0, height: 0)
-        sideMenuVC.presentationStyle.onTopShadowRadius = 10
-        
-        present(sideMenuVC, animated: true, completion: nil)
-    }
-    
     // 월-주 Change Btn
     @IBAction func changeWeekMonth(_ sender: Any) {
         if calendarView.scope == .week {
@@ -123,10 +114,31 @@ class HomeVC: UIViewController {
             setCalendarToMonth()
         }
     }
+    
+    // menu Btn
+    @objc func openSideMenu(_ sender: Any) {
+        guard let sideMenuVC = UIStoryboard(name: Identifiers.sideMenuSB, bundle: nil).instantiateViewController(withIdentifier: Identifiers.sideMenuNC) as? SideMenuNavigationController else {return}
+        sideMenuVC.presentationStyle.onTopShadowColor = .black
+        sideMenuVC.presentationStyle.onTopShadowOpacity = 0.5
+        sideMenuVC.presentationStyle.onTopShadowOffset = CGSize(width: 0, height: 0)
+        sideMenuVC.presentationStyle.onTopShadowRadius = 10
+        
+        present(sideMenuVC, animated: true, completion: nil)
+    }
+    
 }
 
 //MARK: Custom Function
 extension HomeVC {
+    // NavigationBar Setting
+    func setUpNaviBar() {
+        customNaviBar.title = "TODAY'S HOMEWORK"
+        
+        customNaviBar.firstBtn.setImage(UIImage(named: "Alarm"), for: .normal)
+        customNaviBar.secondBtn.setImage(UIImage(named: "ETC"), for: .normal)
+        customNaviBar.secondBtn.addTarget(self, action: #selector(openSideMenu(_:)), for: .touchUpInside)
+    }
+
     // View Gesture Setting
     func setUpHomeViewGesture() {
         // panGesture - 캘린더 상하 스크롤
