@@ -146,6 +146,7 @@
 		2326B3512761EB6000677E7F /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				4CA390AE27845FE3009C5B0B /* Class */,
 				23006589277B290F00F117D8 /* Font */,
 				232D1C45277A007000F4A3FC /* Extension */,
 				2326B36B2761EDC300677E7F /* Factory */,
@@ -193,7 +194,6 @@
 			children = (
 				4CA39080277B19FE009C5B0B /* Subjects.swift */,
 				4CA390AA27841CC6009C5B0B /* Login.swift */,
-				4CA390AC27844387009C5B0B /* Response.swift */,
 				23549B13276E06D500B61691 /* Identifiers.swift */,
 			);
 			path = Struct;
@@ -408,6 +408,14 @@
 				4C66F06D2779937100A678E2 /* SignupVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		4CA390AE27845FE3009C5B0B /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				4CA390AC27844387009C5B0B /* Response.swift */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		F45527BFBD8BC6C365249373 /* Pods */ = {

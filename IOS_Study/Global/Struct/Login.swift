@@ -18,18 +18,3 @@ struct Login: Codable {
         case password = "password"
     }
 }
-
-// MARK: Response 상속
-class LoginResponse: Response {
-    let jwtToken: String
-    
-    enum CodingKeys: String, CodingKey{
-        case jwtToken
-    }
-    
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.jwtToken = try container.decode(String.self, forKey: .jwtToken)
-        try super.init(from: decoder)
-    }
-}
