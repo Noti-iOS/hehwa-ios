@@ -14,7 +14,7 @@ class AppController {
     static let shared = AppController()
     private init() {
         // 로그아웃 임시 코드
-        UserDefaults.standard.removeObject(forKey: "jwtToken")
+        Auth.logout()
             registerAuthStateDidChangeEvent()
         }
     
