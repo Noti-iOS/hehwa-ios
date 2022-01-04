@@ -21,6 +21,7 @@ class LoginVC: UIViewController {
         setView()
         setDelegate()
         setSocialLoginButton()
+        setupAddTargetCheckTextfield()
     }
     
     // 임시 탭바 화면 이동
@@ -34,16 +35,28 @@ class LoginVC: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
+    @IBAction func loginClick(_ sender: Any) {
+        print("login")
+    }
+    
+    @objc func textFieldsIsNotEmpty(sender: UITextField) {
+        sender.text = sender.text?.trimmingCharacters(in: .whitespaces)
+        guard
+            let email = inputEmail.text, !email.isEmpty,
+            let password = inputPassword.text, !password.isEmpty
+        else {
+            self.loginButton.isEnabled = false
+            loginButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 0.6), for: .normal)
+            loginButton.backgroundColor = UIColor(red: 100/255, green: 119/255, blue: 211/255, alpha: 0.6)
+            return
+        }
+        loginButton.isEnabled = true
+        loginButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        loginButton.backgroundColor = UIColor(red: 100/255, green: 119/255, blue: 211/255, alpha: 1)
+    }
 }
 
 extension LoginVC: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let emailText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
-//        let passwordText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
-        print(emailText)
-//        print(passwordText)
-        return true
-    }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor(red: 100/255, green: 119/255, blue: 211/255, alpha: 1).cgColor
@@ -65,10 +78,6 @@ extension LoginVC: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
-    func endEdit(){
-        inputPassword.resignFirstResponder()
-    }
 }
 
 // MARK: - custom Method
@@ -78,12 +87,17 @@ extension LoginVC{
         inputPassword.delegate = self
     }
     
+    func setupAddTargetCheckTextfield () {
+        loginButton.isEnabled = false
+        inputEmail.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+        inputPassword.addTarget(self, action: #selector(textFieldsIsNotEmpty), for: .editingChanged)
+    }
+    
     func setView () {
         let logoImage = UIImage(named: "Logo")
         logo.image = logoImage
         loginLabel.alpha = 0.5
         loginButton.layer.cornerRadius = 4
-        loginButton.isEnabled = false
         inputEmail.addLeftPadding(width: 10)
         inputEmail.layer.cornerRadius = 4
         inputPassword.addLeftPadding(width: 10)
