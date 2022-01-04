@@ -180,6 +180,9 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="LpN-h6-ijN" secondAttribute="trailing" constant="16" id="wJ8-uP-DMU"/>
                             <constraint firstItem="goC-rL-5yM" firstAttribute="top" secondItem="iR6-9g-kip" secondAttribute="bottom" constant="31" id="wJW-xw-b80"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="NgH-ma-s0W" appends="YES" id="9lM-ij-Kdg"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="appleLogin" destination="dKf-08-mz7" id="dgZ-Lr-AJI"/>
@@ -194,7 +197,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="HoN-Ur-0zi"/>
+                <tapGestureRecognizer id="NgH-ma-s0W">
+                    <connections>
+                        <action selector="tapForDissmissKeyboard:" destination="Y6W-OH-hqX" id="q4z-yL-NXp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-16" y="110"/>
         </scene>

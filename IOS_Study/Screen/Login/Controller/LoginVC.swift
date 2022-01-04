@@ -26,20 +26,31 @@ class LoginVC: UIViewController {
         setupAddTargetCheckTextfield()
     }
     
+    @IBAction func tapForDissmissKeyboard(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
     // 임시 탭바 화면 이동
     @IBAction func moveHome(_ sender: Any) {
         let vc = ViewControllerFactory.viewController(for: .tabBar)
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
+    
     @IBAction func moveSignup(_ sender: Any) {
         let vc = ViewControllerFactory.viewController(for: .signup)
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
+    
     @IBAction func loginClick(_ sender: Any) {
         guard let email=inputEmail.text, let password=inputPassword.text else {return}
         let login = Login(email:email,password: password)
+        // login test
+        UserDefaults.standard.set("jwtToken", forKey: "jwtToken")
+        NotificationCenter.default.post(name: .authStateDidChange, object: nil)
+        //showAlert(title: "로그인 실패", message: "회원정보가 없습니다")
+        //LoginAPI.requestLogin(params: login)
         print(login)
     }
     
@@ -122,6 +133,22 @@ extension LoginVC{
         kakaoLogin.layer.shadowOpacity = 0.5
         kakaoLogin.layer.shadowOffset = CGSize(width: 0, height: 1)
     }
+    
+    // alert
+    func showAlert(title:String, message: String){
+        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+           
+        let okAction: UIAlertAction = UIAlertAction(title: "확인", style: .default) { action in
+            self.inputEmail.text = ""
+            self.inputPassword.text = ""
+            self.inputEmail.becomeFirstResponder()
+        }
+           alert.addAction(okAction)
+           
+           self.present(alert, animated: true){
+               print("얼럿 화면에 보여짐")
+           }
+    }
     // function for login
     // validation
     func isValidEmail(email: String?) -> Bool {
@@ -150,19 +177,34 @@ extension LoginVC{
 // MARK: function for login
 class LoginAPI{
     static let url = "url"
+    
+    //로그인 요청
     static func requestLogin(params login:Login){
         let headers: HTTPHeaders = []
+        // 서버 resonpse 내용에 따라 코드 수정
         AF.request(url, method: .post, parameters: login, encoder: JSONParameterEncoder.default, headers: headers)
             .responseData { response in switch response.result {
             case .success(let data):
-                
-                
+                let jwtToken = LoginAPI.parseData(data)
+                //자동 로그인을 위한 jwt 저장
+                UserDefaults.standard.set(jwtToken, forKey: "jwtToken")
+                NotificationCenter.default.post(name: .authStateDidChange, object: nil)
             case.failure(let error):
                 print("error: \(error)")
             }
-            }
+        }
     }
     
-    static func
+    // decode data
+    static func parseData(_ data:Data)->String{
+        let decoder = JSONDecoder()
+        do{
+            let response = try decoder.decode(LoginResponse.self, from: data)
+            let jwtToken = response.jwtToken
+            return jwtToken
+        }catch let error{
+            print("error--->\(error)")
+            return ""
+        }
+    }
 }
-
