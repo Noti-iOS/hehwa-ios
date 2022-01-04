@@ -38,6 +38,7 @@
 		4CA390A72782BB9B009C5B0B /* Notification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390A62782BB9B009C5B0B /* Notification+.swift */; };
 		4CA390A92782BC22009C5B0B /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390A82782BC22009C5B0B /* AppController.swift */; };
 		4CA390AB27841CC6009C5B0B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390AA27841CC6009C5B0B /* Login.swift */; };
+		4CA390AD27844387009C5B0B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390AC27844387009C5B0B /* Response.swift */; };
 		A3B0158CC326976A62A9CACF /* Pods_IOS_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DE82466545D9BE48644D73 /* Pods_IOS_Study.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		4CA390A62782BB9B009C5B0B /* Notification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+.swift"; sourceTree = "<group>"; };
 		4CA390A82782BC22009C5B0B /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		4CA390AA27841CC6009C5B0B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		4CA390AC27844387009C5B0B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		9A8288964E3C1935BDC37774 /* Pods-IOS_Study.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS_Study.debug.xcconfig"; path = "Target Support Files/Pods-IOS_Study/Pods-IOS_Study.debug.xcconfig"; sourceTree = "<group>"; };
 		C6DE82466545D9BE48644D73 /* Pods_IOS_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -191,6 +193,7 @@
 			children = (
 				4CA39080277B19FE009C5B0B /* Subjects.swift */,
 				4CA390AA27841CC6009C5B0B /* Login.swift */,
+				4CA390AC27844387009C5B0B /* Response.swift */,
 				23549B13276E06D500B61691 /* Identifiers.swift */,
 			);
 			path = Struct;
@@ -552,6 +555,7 @@
 				2304DE1A276E0E3400AD0691 /* AppDelegate.swift in Sources */,
 				4CA390AB27841CC6009C5B0B /* Login.swift in Sources */,
 				23549B27276E0AE900B61691 /* MyPageVC.swift in Sources */,
+				4CA390AD27844387009C5B0B /* Response.swift in Sources */,
 				4CA39081277B19FE009C5B0B /* Subjects.swift in Sources */,
 				4CA3907B277B191A009C5B0B /* MemoCVC.swift in Sources */,
 				23549B21276E0ABB00B61691 /* ChattingVC.swift in Sources */,

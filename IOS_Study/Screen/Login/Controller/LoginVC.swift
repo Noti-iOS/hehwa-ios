@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginVC: UIViewController {
     @IBOutlet weak var logo: UIImageView!
@@ -39,7 +40,7 @@ class LoginVC: UIViewController {
     @IBAction func loginClick(_ sender: Any) {
         guard let email=inputEmail.text, let password=inputPassword.text else {return}
         let login = Login(email:email,password: password)
-        print("login")
+        print(login)
     }
     
     @objc func textFieldsIsNotEmpty(sender: UITextField) {
@@ -148,8 +149,20 @@ extension LoginVC{
 
 // MARK: function for login
 class LoginAPI{
-    static func requestLogin(){
-        
+    static let url = "url"
+    static func requestLogin(params login:Login){
+        let headers: HTTPHeaders = []
+        AF.request(url, method: .post, parameters: login, encoder: JSONParameterEncoder.default, headers: headers)
+            .responseData { response in switch response.result {
+            case .success(let data):
+                
+                
+            case.failure(let error):
+                print("error: \(error)")
+            }
+            }
     }
+    
+    static func
 }
 
