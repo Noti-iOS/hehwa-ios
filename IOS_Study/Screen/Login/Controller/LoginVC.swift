@@ -37,6 +37,8 @@ class LoginVC: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     @IBAction func loginClick(_ sender: Any) {
+        guard let email=inputEmail.text, let password=inputPassword.text else {return}
+        let login = Login(email:email,password: password)
         print("login")
     }
     
