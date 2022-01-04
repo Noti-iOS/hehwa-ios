@@ -30,7 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aND-AO-x7i" userLabel="inputEmail">
-                                <rect key="frame" x="16" y="336" width="382" height="52"/>
+                                <rect key="frame" x="16" y="308" width="382" height="52"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="eZn-yE-avH"/>
@@ -39,7 +39,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LmN-6Y-fBj" userLabel="inputPassword">
-                                <rect key="frame" x="16" y="400" width="382" height="52"/>
+                                <rect key="frame" x="16" y="372" width="382" height="52"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="Hjf-Kv-odh"/>
@@ -54,7 +54,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iR6-9g-kip">
-                                <rect key="frame" x="16" y="472" width="382" height="52"/>
+                                <rect key="frame" x="16" y="444" width="382" height="52"/>
                                 <color key="backgroundColor" red="0.39215686274509803" green="0.46666666666666667" blue="0.82745098039215681" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="Ao6-os-uxE"/>
@@ -69,13 +69,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goC-rL-5yM">
-                                <rect key="frame" x="195" y="555" width="24" height="20"/>
+                                <rect key="frame" x="195" y="527" width="24" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpN-h6-ijN">
-                                <rect key="frame" x="16" y="606" width="382" height="52"/>
+                                <rect key="frame" x="16" y="578" width="382" height="52"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="TNT-Gk-1T4"/>
@@ -87,7 +87,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gC-Ze-XOt">
-                                <rect key="frame" x="16" y="670" width="382" height="52"/>
+                                <rect key="frame" x="16" y="642" width="382" height="52"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="oLC-9L-Qzk"/>
@@ -98,8 +98,8 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXs-da-tGs">
-                                <rect key="frame" x="117.5" y="785" width="179" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXs-da-tGs">
+                                <rect key="frame" x="117.5" y="770" width="179" height="34"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
@@ -134,6 +134,18 @@
                                     <action selector="moveHome:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2Ep-7e-hyq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKf-08-mz7">
+                                <rect key="frame" x="16" y="706" width="382" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="dMH-ZZ-SQ0"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="애플 로그인하기">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -141,6 +153,7 @@
                         <constraints>
                             <constraint firstItem="6pO-ed-dXP" firstAttribute="centerX" secondItem="Hrc-Ui-6Me" secondAttribute="centerX" id="286-G5-001"/>
                             <constraint firstItem="6gC-Ze-XOt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="5Bi-8I-4vi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dKf-08-mz7" secondAttribute="trailing" constant="16" id="7W5-Q0-fKt"/>
                             <constraint firstItem="vfc-6h-wiw" firstAttribute="top" secondItem="6pO-ed-dXP" secondAttribute="bottom" constant="12" id="8Tk-co-EAY"/>
                             <constraint firstItem="Hrc-Ui-6Me" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="CTD-H5-loJ"/>
                             <constraint firstItem="6gC-Ze-XOt" firstAttribute="top" secondItem="LpN-h6-ijN" secondAttribute="bottom" constant="12" id="ElC-Bf-n2X"/>
@@ -149,12 +162,14 @@
                             <constraint firstItem="iR6-9g-kip" firstAttribute="top" secondItem="LmN-6Y-fBj" secondAttribute="bottom" constant="20" id="OTY-ad-rs0"/>
                             <constraint firstItem="Hrc-Ui-6Me" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="60" id="RKG-U2-23a"/>
                             <constraint firstItem="LpN-h6-ijN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="U3e-og-cyy"/>
-                            <constraint firstItem="aND-AO-x7i" firstAttribute="top" secondItem="vfc-6h-wiw" secondAttribute="bottom" constant="88" id="V8e-Dj-VRz"/>
+                            <constraint firstItem="aND-AO-x7i" firstAttribute="top" secondItem="vfc-6h-wiw" secondAttribute="bottom" constant="60" id="V8e-Dj-VRz"/>
+                            <constraint firstItem="dKf-08-mz7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Vw4-n8-tVT"/>
+                            <constraint firstItem="dKf-08-mz7" firstAttribute="top" secondItem="6gC-Ze-XOt" secondAttribute="bottom" constant="12" id="WeJ-Wl-usg"/>
                             <constraint firstItem="iR6-9g-kip" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="alf-Da-e2H"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6gC-Ze-XOt" secondAttribute="trailing" constant="16" id="d2i-le-YXi"/>
                             <constraint firstItem="aND-AO-x7i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="hAl-Em-vLX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iR6-9g-kip" secondAttribute="trailing" constant="16" id="hka-q4-xvb"/>
-                            <constraint firstItem="EXs-da-tGs" firstAttribute="top" secondItem="6gC-Ze-XOt" secondAttribute="bottom" constant="40" id="jaz-RM-tzF"/>
+                            <constraint firstItem="EXs-da-tGs" firstAttribute="top" secondItem="dKf-08-mz7" secondAttribute="bottom" constant="12" id="jaz-RM-tzF"/>
                             <constraint firstItem="goC-rL-5yM" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="kVF-9z-Kq4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aND-AO-x7i" secondAttribute="trailing" constant="16" id="lHS-ny-CU4"/>
                             <constraint firstItem="6pO-ed-dXP" firstAttribute="top" secondItem="Hrc-Ui-6Me" secondAttribute="bottom" constant="20" id="pIJ-Yd-Tls"/>
@@ -167,6 +182,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="appleLogin" destination="dKf-08-mz7" id="dgZ-Lr-AJI"/>
                         <outlet property="googleLogin" destination="LpN-h6-ijN" id="MeY-wi-lBX"/>
                         <outlet property="inputEmail" destination="aND-AO-x7i" id="S0M-oA-UCC"/>
                         <outlet property="inputPassword" destination="LmN-6Y-fBj" id="1ue-tR-YS2"/>

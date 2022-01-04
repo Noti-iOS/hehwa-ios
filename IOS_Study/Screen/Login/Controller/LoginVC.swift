@@ -12,6 +12,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var googleLogin: UIButton!
     @IBOutlet weak var kakaoLogin: UIButton!
+    @IBOutlet weak var appleLogin: UIButton!
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
     @IBOutlet weak var moveHome: UIButton!
@@ -78,6 +79,7 @@ extension LoginVC: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+
 }
 
 // MARK: - custom Method
