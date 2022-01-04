@@ -43,5 +43,6 @@ class Auth {
     
     static func logout(){
         UserDefaults.standard.removeObject(forKey: "jwtToken")
+        NotificationCenter.default.post(name: .authStateDidChange, object: nil)
     }
 }
