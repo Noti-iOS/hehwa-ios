@@ -11,13 +11,20 @@ import Photos
 class MyPageVC: UIViewController {
     @IBOutlet weak var customNaviBar: CustomNB!
     @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var studentPhone: UITextField!
+    @IBOutlet weak var school: UITextField!
+    @IBOutlet weak var parentsPhone: UITextField!
     
     var imagePicker:UIImagePickerController!
+    var isInfoEditing: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNaviBar()
         setUpProfileImg()
+        setUpStudentInfo()
     }
 }
 
@@ -28,7 +35,9 @@ extension MyPageVC {
         customNaviBar.title = "PROFILE"
         
         customNaviBar.isFirstBtnEnabled = false
-        customNaviBar.isSecondBtnEnabled = false
+        customNaviBar.secondBtn.setImage(UIImage(), for: .normal)
+        customNaviBar.secondBtn.setTitle("편집", for: .normal)
+        customNaviBar.secondBtn.addTarget(self, action: #selector(editInfo), for: .touchUpInside)
     }
     
     // profileImg Setting
@@ -76,8 +85,54 @@ extension MyPageVC {
             self.present(accessConfirmVC, animated: true, completion: nil)
         }
     }
+    
+    func setUpStudentInfo() {
+        isInfoEditing = false
+        
+        name.text = "황윤경"
+        email.text = "hyk0425@gmail.com"
+        
+        studentPhone.text = "010-5585-4034"
+        studentPhone.textColor = .systemGray
+        studentPhone.isEnabled = false
+        
+        school.text = "서울사대부고등학교"
+        school.textColor = .systemGray
+        school.isEnabled = false
+        
+        parentsPhone.text = "010-8701-4034"
+        parentsPhone.textColor = .systemGray
+        parentsPhone.isEnabled = false
+    }
+    
+    @objc func editInfo() {
+        isInfoEditing.toggle()
+        
+        if isInfoEditing {
+            customNaviBar.secondBtn.setTitle("완료", for: .normal)
+            
+            studentPhone.isEnabled = true
+            school.isEnabled = true
+            parentsPhone.isEnabled = true
+            
+            studentPhone.textColor = .systemGray3
+            school.textColor = .systemGray3
+            parentsPhone.textColor = .systemGray3
+        } else {
+            customNaviBar.secondBtn.setTitle("편집", for: .normal)
+            
+            studentPhone.isEnabled = false
+            school.isEnabled = false
+            parentsPhone.isEnabled = false
+            
+            studentPhone.textColor = .systemGray
+            school.textColor = .systemGray
+            parentsPhone.textColor = .systemGray
+        }
+    }
 }
 
+//MARK: UIImagePickerControllerDelegate, UINavigationControllerDelegate
 extension MyPageVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         

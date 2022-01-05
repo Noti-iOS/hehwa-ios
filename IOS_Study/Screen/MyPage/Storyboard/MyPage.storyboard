@@ -7,6 +7,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeoR.ttf">
+            <string>AppleSDGothicNeoR00</string>
+        </array>
+        <array key="AppleSDGothicNeoSB.ttf">
+            <string>AppleSDGothicNeoSB00</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--My PageVC-->
         <scene sceneID="s0d-6b-0kx">
@@ -29,20 +37,104 @@
                                     <constraint firstAttribute="width" constant="90" id="27o-K9-aS7"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Number" translatesAutoresizingMaskIntoConstraints="NO" id="NjB-Ao-Gd2">
+                                <rect key="frame" x="33" y="325" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="eBw-RD-Uko"/>
+                                    <constraint firstAttribute="height" constant="24" id="vG7-QY-NVw"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="School" translatesAutoresizingMaskIntoConstraints="NO" id="ijL-vo-HSs">
+                                <rect key="frame" x="33" y="359" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="MWr-Nf-aZ0"/>
+                                    <constraint firstAttribute="width" constant="24" id="WLa-1d-CMw"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ParentsPhone" translatesAutoresizingMaskIntoConstraints="NO" id="UOX-QM-mGf">
+                                <rect key="frame" x="33" y="393" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="CvG-Ow-z9I"/>
+                                    <constraint firstAttribute="height" constant="24" id="x7I-eI-CbX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkQ-eY-yZH">
+                                <rect key="frame" x="182" y="253" width="50" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="idv-9U-4xM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeoSB00" family="AppleSDGothicNeoSB00" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yh0-l4-t6x">
+                                <rect key="frame" x="189" y="282" width="36" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="3GL-6w-1eY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeoR00" family="AppleSDGothicNeoR00" pointSize="16"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="010-0000-0000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EmQ-js-fCp">
+                                <rect key="frame" x="76" y="320" width="106" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="lB5-pU-6S6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="school" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c7k-jL-iPQ">
+                                <rect key="frame" x="76" y="354" width="43" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="PwJ-Zx-DnS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="010-0000-0000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cPs-P6-mer">
+                                <rect key="frame" x="76" y="388" width="106" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="6Po-xx-KkA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0Sa-lA-G4c" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="3cd-ex-dVb"/>
                             <constraint firstItem="0Sa-lA-G4c" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7uk-7Z-agu"/>
+                            <constraint firstItem="c7k-jL-iPQ" firstAttribute="centerY" secondItem="ijL-vo-HSs" secondAttribute="centerY" id="9WY-dA-0aO"/>
+                            <constraint firstItem="cPs-P6-mer" firstAttribute="centerY" secondItem="UOX-QM-mGf" secondAttribute="centerY" id="ENc-Cs-Abz"/>
+                            <constraint firstItem="NjB-Ao-Gd2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="33" id="LDX-XP-hvk"/>
+                            <constraint firstItem="UOX-QM-mGf" firstAttribute="top" secondItem="ijL-vo-HSs" secondAttribute="bottom" constant="10" id="S6W-dm-BpC"/>
+                            <constraint firstItem="EmQ-js-fCp" firstAttribute="centerY" secondItem="NjB-Ao-Gd2" secondAttribute="centerY" id="UBI-a1-ZIk"/>
+                            <constraint firstItem="ijL-vo-HSs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="33" id="X2K-Pk-fbl"/>
+                            <constraint firstItem="yh0-l4-t6x" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ZkH-jb-NEE"/>
+                            <constraint firstItem="cPs-P6-mer" firstAttribute="leading" secondItem="UOX-QM-mGf" secondAttribute="trailing" constant="19" id="b1g-bW-k6y"/>
+                            <constraint firstItem="UOX-QM-mGf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="33" id="bZq-Qi-XNT"/>
+                            <constraint firstItem="yh0-l4-t6x" firstAttribute="top" secondItem="tkQ-eY-yZH" secondAttribute="bottom" constant="9" id="cbh-HF-aJA"/>
+                            <constraint firstItem="EmQ-js-fCp" firstAttribute="leading" secondItem="NjB-Ao-Gd2" secondAttribute="trailing" constant="19" id="haF-gY-emY"/>
+                            <constraint firstItem="tkQ-eY-yZH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="k7h-YN-cw0"/>
+                            <constraint firstItem="c7k-jL-iPQ" firstAttribute="leading" secondItem="ijL-vo-HSs" secondAttribute="trailing" constant="19" id="kF4-pZ-PQf"/>
                             <constraint firstItem="y9h-5D-k6h" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="kYD-ly-Zm9"/>
                             <constraint firstItem="y9h-5D-k6h" firstAttribute="top" secondItem="0Sa-lA-G4c" secondAttribute="bottom" constant="15" id="kzY-kZ-2eb"/>
+                            <constraint firstItem="NjB-Ao-Gd2" firstAttribute="top" secondItem="yh0-l4-t6x" secondAttribute="bottom" constant="23" id="mb0-qU-Uif"/>
+                            <constraint firstItem="tkQ-eY-yZH" firstAttribute="top" secondItem="y9h-5D-k6h" secondAttribute="bottom" constant="15" id="nuW-qy-Cai"/>
+                            <constraint firstItem="ijL-vo-HSs" firstAttribute="top" secondItem="NjB-Ao-Gd2" secondAttribute="bottom" constant="10" id="rLS-sg-39f"/>
                             <constraint firstItem="0Sa-lA-G4c" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="v3P-YR-MVo"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="customNaviBar" destination="0Sa-lA-G4c" id="R5H-ev-Gzr"/>
+                        <outlet property="email" destination="yh0-l4-t6x" id="TfC-qK-yuD"/>
+                        <outlet property="name" destination="tkQ-eY-yZH" id="0Tg-sX-16o"/>
+                        <outlet property="parentsPhone" destination="cPs-P6-mer" id="9Mu-tN-vHR"/>
                         <outlet property="profileImg" destination="y9h-5D-k6h" id="dFI-pS-Esg"/>
+                        <outlet property="school" destination="c7k-jL-iPQ" id="HBb-Jt-W8o"/>
+                        <outlet property="studentPhone" destination="EmQ-js-fCp" id="9XX-Iy-RId"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -51,8 +143,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Number" width="24" height="24"/>
+        <image name="ParentsPhone" width="24" height="24"/>
+        <image name="School" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
