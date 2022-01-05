@@ -18,27 +18,36 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Sa-lA-G4c" customClass="CustomNB" customModule="IOS_Study" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="89"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="89" id="M1f-Le-svY"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y9h-5D-k6h">
+                                <rect key="frame" x="162" y="148" width="90" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="0pW-AP-bCJ"/>
+                                    <constraint firstAttribute="width" constant="90" id="27o-K9-aS7"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0Sa-lA-G4c" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="3cd-ex-dVb"/>
                             <constraint firstItem="0Sa-lA-G4c" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7uk-7Z-agu"/>
+                            <constraint firstItem="y9h-5D-k6h" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="kYD-ly-Zm9"/>
+                            <constraint firstItem="y9h-5D-k6h" firstAttribute="top" secondItem="0Sa-lA-G4c" secondAttribute="bottom" constant="15" id="kzY-kZ-2eb"/>
                             <constraint firstItem="0Sa-lA-G4c" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="v3P-YR-MVo"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="customNaviBar" destination="0Sa-lA-G4c" id="R5H-ev-Gzr"/>
+                        <outlet property="profileImg" destination="y9h-5D-k6h" id="dFI-pS-Esg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="242" y="-37"/>
+            <point key="canvasLocation" x="240.57971014492756" y="-37.5"/>
         </scene>
     </scenes>
     <resources>
