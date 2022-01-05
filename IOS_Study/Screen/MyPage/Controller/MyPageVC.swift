@@ -8,9 +8,21 @@
 import UIKit
 
 class MyPageVC: UIViewController {
-
+    @IBOutlet weak var customNaviBar: CustomNB!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNaviBar()
+    }
+}
 
+//MARK: Custom Function
+extension MyPageVC {
+    // NavigationBar Setting
+    func setUpNaviBar() {
+        customNaviBar.title = "PROFILE"
+        
+        customNaviBar.isFirstBtnEnabled = false
+        customNaviBar.isSecondBtnEnabled = false
     }
 }
