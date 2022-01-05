@@ -46,7 +46,7 @@ extension MyPageVC {
         profileImg.layer.cornerRadius = profileImg.frame.width / 2
         profileImg.clipsToBounds = true
         
-        let imgTapGesture = UITapGestureRecognizer(target: self, action: #selector(setProfileImg))
+        let imgTapGesture = UITapGestureRecognizer(target: self, action: #selector(selectProfile))
         profileImg.addGestureRecognizer(imgTapGesture)
         profileImg.isUserInteractionEnabled = true
     }
@@ -60,8 +60,17 @@ extension MyPageVC {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    // 프로필 이미지 눌렀을 때
+    @objc func selectProfile() {
+        if isInfoEditing {
+            setProfileImg()
+        } else {
+            showProfileImg()
+        }
+    }
+    
     // open Gallery and Select Profile
-    @objc func setProfileImg(){
+    func setProfileImg(){
         switch PHPhotoLibrary.authorizationStatus() {
         case .authorized:
             // 갤러리 권한 존재, 갤러리로 전환
@@ -86,6 +95,16 @@ extension MyPageVC {
         }
     }
     
+    // 프로필 이미지 새 뷰에서 보기
+    func showProfileImg() {
+        guard let profileImgVC = UIStoryboard(name: Identifiers.profileImageSB, bundle: nil).instantiateViewController(withIdentifier:  Identifiers.profileImageVC) as? ProfileImageVC else {return}
+        
+        profileImgVC.profileImgTmp = profileImg.image
+        profileImgVC.modalPresentationStyle = .fullScreen
+        present(profileImgVC, animated: true, completion: nil)
+    }
+    
+    // info data Setting
     func setUpStudentInfo() {
         isInfoEditing = false
         
@@ -105,6 +124,7 @@ extension MyPageVC {
         parentsPhone.isEnabled = false
     }
     
+    // info data Edit
     @objc func editInfo() {
         isInfoEditing.toggle()
         
