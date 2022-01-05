@@ -46,3 +46,4 @@ class Auth {
         NotificationCenter.default.post(name: .authStateDidChange, object: nil)
     }
 }
+
