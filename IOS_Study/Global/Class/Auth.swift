@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import KakaoSDKAuth
 
 class Auth {
     static let url = "url"
@@ -44,6 +45,9 @@ class Auth {
     static func logout(){
         KeychainHelper.standard.delete(service: "token", account: "student")
         NotificationCenter.default.post(name: .authStateDidChange, object: nil)
+    }
+    
+    static func kakaoLogin(){
     }
 }
 
