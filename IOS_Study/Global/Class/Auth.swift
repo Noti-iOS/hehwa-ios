@@ -29,7 +29,7 @@ class Auth {
     }
     
     // decode data
-    static func parseData(_ data:Data)->String{
+    static func parseData(_ data:Data)->JwtToken{
         let decoder = JSONDecoder()
         do{
             let response = try decoder.decode(LoginResponse.self, from: data)
@@ -37,7 +37,6 @@ class Auth {
             return jwtToken
         }catch let error{
             print("error--->\(error)")
-            return ""
         }
     }
     
