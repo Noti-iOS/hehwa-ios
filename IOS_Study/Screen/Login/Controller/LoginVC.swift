@@ -48,6 +48,10 @@ class LoginVC: UIViewController {
         print(login)
     }
     
+    @IBAction func kakaoLoginButtonClick(_ sender: Any) {
+        Auth.testKakaoLogin()
+    }
+    
     @objc func textFieldsIsNotEmpty(sender: UITextField) {
         sender.text = sender.text?.trimmingCharacters(in: .whitespaces)
         guard

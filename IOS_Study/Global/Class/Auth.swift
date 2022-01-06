@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 import KakaoSDKAuth
+import KakaoSDKUser
 
 class Auth {
     static let url = "url"
@@ -48,6 +49,83 @@ class Auth {
     }
     
     static func kakaoLogin(){
+        let kakaoLoginUrl = "url"
+        let headers: HTTPHeaders = []
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                print("loginWithKakaoTalk() success.")
+                guard let token = oauthToken else {return}
+                print(token)
+                let param = ["accessToken":token.accessToken]
+                AF.request(kakaoLoginUrl, method: .post, parameters: param, encoder: JSONParameterEncoder.default, headers: headers)
+                    .responseData { response in switch response.result {
+                    case .success(let data):
+                        guard let jwtToken = Auth.parseData(data) else { return }
+                        //자동 로그인을 위한 jwt 저장
+                        KeychainHelper.standard.save(jwtToken, service: "token", account: "student")
+                        NotificationCenter.default.post(name: .authStateDidChange, object: nil)
+                    case.failure(let error):
+                        print("error: \(error)")
+                    }
+                }
+            }
+        }
+        else {
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                print("loginWithKakaoAccount() success.")
+                //do something
+                guard let token = oauthToken else {return}
+                print(token)
+                let param = ["accessToken":token.accessToken]
+                AF.request(kakaoLoginUrl, method: .post, parameters: param, encoder: JSONParameterEncoder.default, headers: headers)
+                    .responseData { response in switch response.result {
+                    case .success(let data):
+                        guard let jwtToken = Auth.parseData(data) else { return }
+                        //자동 로그인을 위한 jwt 저장
+                        KeychainHelper.standard.save(jwtToken, service: "token", account: "student")
+                        NotificationCenter.default.post(name: .authStateDidChange, object: nil)
+                    case.failure(let error):
+                        print("error: \(error)")
+                    }
+                }
+            }
+        }
+    }
+    
+    static func testKakaoLogin(){
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                print("loginWithKakaoTalk() success.")
+                guard let token = oauthToken else {return}
+                let jwtToken = JwtToken(accessToken: token.accessToken, refreshToken: token.refreshToken)
+                KeychainHelper.standard.save(jwtToken, service: "token", account: "student")
+                NotificationCenter.default.post(name: .authStateDidChange, object: nil)
+                print(token)
+            }
+        }
+        else {
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                print("loginWithKakaoAccount() success.")
+                //do something
+                guard let token = oauthToken else {return}
+                let jwtToken = JwtToken(accessToken: token.accessToken, refreshToken: token.refreshToken)
+                KeychainHelper.standard.save(jwtToken, service: "token", account: "student")
+                NotificationCenter.default.post(name: .authStateDidChange, object: nil)
+                print(token)
+            }
+        }
     }
 }
 
