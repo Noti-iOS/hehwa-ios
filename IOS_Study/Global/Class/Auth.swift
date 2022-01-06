@@ -18,9 +18,9 @@ class Auth {
         AF.request(url, method: .post, parameters: login, encoder: JSONParameterEncoder.default, headers: headers)
             .responseData { response in switch response.result {
             case .success(let data):
-                let jwtToken = Auth.parseData(data)
+                guard let jwtToken = Auth.parseData(data) else { return }
                 //자동 로그인을 위한 jwt 저장
-                UserDefaults.standard.set(jwtToken, forKey: "jwtToken")
+                KeychainHelper.standard.save(jwtToken, service: "token", account: "student")
                 NotificationCenter.default.post(name: .authStateDidChange, object: nil)
             case.failure(let error):
                 print("error: \(error)")
@@ -28,8 +28,8 @@ class Auth {
         }
     }
     
-    // decode data
-    static func parseData(_ data:Data)->JwtToken{
+    // decode data 추후에 삭제 될 수도 있음.
+    static func parseData(_ data:Data)->JwtToken?{
         let decoder = JSONDecoder()
         do{
             let response = try decoder.decode(LoginResponse.self, from: data)
@@ -37,11 +37,12 @@ class Auth {
             return jwtToken
         }catch let error{
             print("error--->\(error)")
+            return nil
         }
     }
     
     static func logout(){
-        UserDefaults.standard.removeObject(forKey: "jwtToken")
+        KeychainHelper.standard.delete(service: "token", account: "student")
         NotificationCenter.default.post(name: .authStateDidChange, object: nil)
     }
 }

@@ -40,7 +40,8 @@ class LoginVC: UIViewController {
         guard let email=inputEmail.text, let password=inputPassword.text else {return}
         let login = Login(email:email,password: password)
         // login test
-        UserDefaults.standard.set("jwtToken", forKey: "jwtToken")
+        let token = JwtToken(accessToken: "access", refreshToken:"refresh")
+        KeychainHelper.standard.save(token, service: "token", account: "student")
         NotificationCenter.default.post(name: .authStateDidChange, object: nil)
         //showAlert(title: "로그인 실패", message: "회원정보가 없습니다")
         //Auth.requestLogin(params: login)
