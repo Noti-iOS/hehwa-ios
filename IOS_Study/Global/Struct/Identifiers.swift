@@ -33,6 +33,7 @@ struct Identifiers {
     static let memoCVC = "MemoCVC"
     static let homeworkListTVC = "HomeworkListTVC"
     static let menuListTVC = "MenuListTVC"
+    static let subjectTVC = "SubjectTVC"
     
     //MARK: - View
 }

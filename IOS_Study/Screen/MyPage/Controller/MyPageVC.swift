@@ -9,6 +9,13 @@ import UIKit
 import Photos
 
 class MyPageVC: UIViewController {
+    let subjects = [
+        Subjects("수학", "윤경T", ["쎈 수학 p110~120", "곱셈공식 암기"]),
+        Subjects("영어", "호준T", ["단어 Day 7 암기", "영어 문법(초록책) p20~24", "수능특강 p11~14"]),
+        Subjects("과학", "은희T", ["p51~60", "주기율표 암기"])
+    ]
+    var isopened = [false, false, false]
+    
     @IBOutlet weak var customNaviBar: CustomNB!
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -16,6 +23,8 @@ class MyPageVC: UIViewController {
     @IBOutlet weak var studentPhone: UITextField!
     @IBOutlet weak var school: UITextField!
     @IBOutlet weak var parentsPhone: UITextField!
+    
+    @IBOutlet weak var subjectsListTV: UITableView!
     
     var imagePicker:UIImagePickerController!
     var isInfoEditing: Bool!
@@ -25,6 +34,9 @@ class MyPageVC: UIViewController {
         setUpNaviBar()
         setUpProfileImg()
         setUpStudentInfo()
+        
+        subjectsListTV.dataSource = self
+        subjectsListTV.delegate = self
     }
 }
 
@@ -74,7 +86,22 @@ extension MyPageVC {
         switch PHPhotoLibrary.authorizationStatus() {
         case .authorized:
             // 갤러리 권한 존재, 갤러리로 전환
-            openGallery()
+            let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            let goGallery = UIAlertAction(title: "갤러리로 이동", style: .default) { action -> Void in
+                self.openGallery()
+            }
+
+            let setDefaultImg = UIAlertAction(title: "기본 이미지로 변경", style: .default) { action -> Void in
+                self.profileImg.image = UIImage(named: "SampleProfileImg")
+            }
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel) { action -> Void in }
+            
+            actionSheetController.addAction(goGallery)
+            actionSheetController.addAction(setDefaultImg)
+            actionSheetController.addAction(cancelAction)
+            
+            present(actionSheetController, animated: true, completion: nil)
+            
         case .notDetermined:
             // 갤러리 권한 요청
             PHPhotoLibrary.requestAuthorization(for: .readWrite) { (status) in }
@@ -168,5 +195,43 @@ extension MyPageVC: UIImagePickerControllerDelegate, UINavigationControllerDeleg
         profileImg.contentMode = .scaleAspectFill
         
         imagePicker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension MyPageVC: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // 과목 수
+        return subjects.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isopened[section] {
+            return 2 + 1
+        } else {
+            return 1
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let sectionCell = subjectsListTV.dequeueReusableCell(withIdentifier: Identifiers.subjectTVC, for: indexPath) as! SubjectTVC
+            
+            sectionCell.subjectName.text = subjects[indexPath.section].subjectName
+            
+            return sectionCell
+        } else {
+            let cell = subjectsListTV.dequeueReusableCell(withIdentifier: "HomeworkTVC", for: indexPath)
+            return cell
+        }
+    }
+}
+
+extension MyPageVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            isopened[indexPath.section].toggle()
+            
+            subjectsListTV.reloadSections([indexPath.section], with: .none)
+        }
     }
 }

@@ -31,6 +31,7 @@
 		23549B1D276E0A6F00B61691 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B1C276E0A6F00B61691 /* HomeVC.swift */; };
 		23549B21276E0ABB00B61691 /* ChattingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B20276E0ABB00B61691 /* ChattingVC.swift */; };
 		23549B27276E0AE900B61691 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B26276E0AE900B61691 /* MyPageVC.swift */; };
+		2366A237278829C800B7F8F9 /* SubjectTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2366A236278829C800B7F8F9 /* SubjectTVC.swift */; };
 		23AB78DD2781C4CF00DEC224 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB78DC2781C4CF00DEC224 /* SideMenuVC.swift */; };
 		23AB78DF2781C7DE00DEC224 /* CustomSideMenuNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB78DE2781C7DE00DEC224 /* CustomSideMenuNC.swift */; };
 		23C0B56B2781EAB800735DD9 /* MenuListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C0B56A2781EAB800735DD9 /* MenuListTVC.swift */; };
@@ -80,6 +81,7 @@
 		23549B20276E0ABB00B61691 /* ChattingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingVC.swift; sourceTree = "<group>"; };
 		23549B23276E0ACE00B61691 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		23549B26276E0AE900B61691 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
+		2366A236278829C800B7F8F9 /* SubjectTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTVC.swift; sourceTree = "<group>"; };
 		23AB78DC2781C4CF00DEC224 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		23AB78DE2781C7DE00DEC224 /* CustomSideMenuNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuNC.swift; sourceTree = "<group>"; };
 		23C0B56A2781EAB800735DD9 /* MenuListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListTVC.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 			children = (
 				23549B22276E0ABF00B61691 /* Storyboard */,
 				23549B25276E0AD100B61691 /* Controller */,
+				2366A2332788294200B7F8F9 /* Cell */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -417,6 +420,22 @@
 				23C74BEB2785FD7F00ED4E30 /* ProfileImageVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		2366A2332788294200B7F8F9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2366A2342788297600B7F8F9 /* TVC */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2366A2342788297600B7F8F9 /* TVC */ = {
+			isa = PBXGroup;
+			children = (
+				2366A236278829C800B7F8F9 /* SubjectTVC.swift */,
+			);
+			path = TVC;
 			sourceTree = "<group>";
 		};
 		4C66F06A277992E500A678E2 /* Signup */ = {
@@ -588,6 +607,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2366A237278829C800B7F8F9 /* SubjectTVC.swift in Sources */,
 				2304DE28276E2CE200AD0691 /* LoginVC.swift in Sources */,
 				23549B12276E019100B61691 /* ViewControllerFactory.swift in Sources */,
 				4CA390A72782BB9B009C5B0B /* Notification+.swift in Sources */,
@@ -759,6 +779,7 @@
 				DEVELOPMENT_TEAM = U2Z5Z44P4R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IOS_Study/Support/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 수정을 위한 갤러리 접근 권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
@@ -770,7 +791,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyk.iOSStudy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hehwa.iOSStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -789,6 +810,7 @@
 				DEVELOPMENT_TEAM = U2Z5Z44P4R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IOS_Study/Support/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 수정을 위한 갤러리 접근 권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
@@ -800,7 +822,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyk.iOSStudy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hehwa.iOSStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
