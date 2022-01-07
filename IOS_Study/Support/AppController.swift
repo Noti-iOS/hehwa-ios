@@ -51,7 +51,7 @@ class AppController {
             routeToLogin()
             return
         }
-        print(token.accessToken," ",token.refreshToken)
+        print("access: \(token.accessToken), refresh: \(token.refreshToken)")
         setHome()
     }
 }

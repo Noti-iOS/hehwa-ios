@@ -85,6 +85,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="googleLoginButtonClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="szZ-3r-tdB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gC-Ze-XOt">
                                 <rect key="frame" x="16" y="642" width="382" height="52"/>
@@ -179,11 +182,11 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="appleLogin" destination="dKf-08-mz7" id="dgZ-Lr-AJI"/>
-                        <outlet property="googleLogin" destination="LpN-h6-ijN" id="MeY-wi-lBX"/>
+                        <outlet property="appleLoginButton" destination="dKf-08-mz7" id="dgZ-Lr-AJI"/>
+                        <outlet property="googleLoginButton" destination="LpN-h6-ijN" id="MeY-wi-lBX"/>
                         <outlet property="inputEmail" destination="aND-AO-x7i" id="S0M-oA-UCC"/>
                         <outlet property="inputPassword" destination="LmN-6Y-fBj" id="1ue-tR-YS2"/>
-                        <outlet property="kakaoLogin" destination="6gC-Ze-XOt" id="i4o-4k-klJ"/>
+                        <outlet property="kakaoLoginButton" destination="6gC-Ze-XOt" id="i4o-4k-klJ"/>
                         <outlet property="loginButton" destination="iR6-9g-kip" id="vqK-9o-og6"/>
                         <outlet property="loginLabel" destination="vfc-6h-wiw" id="txI-Zp-KsV"/>
                         <outlet property="logo" destination="Hrc-Ui-6Me" id="MXN-1m-iDr"/>

@@ -5,14 +5,19 @@
 //
 
 import UIKit
+import GoogleSignIn
+import Alamofire
 
 class LoginVC: UIViewController {
+    
+    let signInConfig = GIDConfiguration.init(clientID: "375201416995-kfre8b862ibg7f8bekjd80f62kjihbku.apps.googleusercontent.com")
+    
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var googleLogin: UIButton!
-    @IBOutlet weak var kakaoLogin: UIButton!
-    @IBOutlet weak var appleLogin: UIButton!
+    @IBOutlet weak var googleLoginButton: UIButton!
+    @IBOutlet weak var kakaoLoginButton: UIButton!
+    @IBOutlet weak var appleLoginButton: UIButton!
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
 
@@ -48,8 +53,12 @@ class LoginVC: UIViewController {
         print(login)
     }
     
+    @IBAction func googleLoginButtonClick(_ sender: Any) {
+        googleLoginTest()
+    }
+    
     @IBAction func kakaoLoginButtonClick(_ sender: Any) {
-        Auth.testKakaoLogin()
+        AppAuth.testKakaoLogin()
     }
     
     @objc func textFieldsIsNotEmpty(sender: UITextField) {
@@ -120,21 +129,21 @@ extension LoginVC{
     
     // 소셜 로그인 버튼 그림자 추가
     func setSocialLoginButton () {
-        googleLogin.layer.cornerRadius = 4
-        googleLogin.layer.shadowColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.25)
-        googleLogin.layer.shadowRadius = 3
-        googleLogin.layer.shadowOpacity = 0.5
-        googleLogin.layer.shadowOffset = CGSize(width: 0, height: 1)
-        kakaoLogin.layer.cornerRadius = 4
-        kakaoLogin.layer.shadowColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.25)
-        kakaoLogin.layer.shadowRadius = 3
-        kakaoLogin.layer.shadowOpacity = 0.5
-        kakaoLogin.layer.shadowOffset = CGSize(width: 0, height: 1)
-        appleLogin.layer.cornerRadius = 4
-        appleLogin.layer.shadowColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.25)
-        appleLogin.layer.shadowRadius = 3
-        appleLogin.layer.shadowOpacity = 0.5
-        appleLogin.layer.shadowOffset = CGSize(width: 0, height: 1)
+        googleLoginButton.layer.cornerRadius = 4
+        googleLoginButton.layer.shadowColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+        googleLoginButton.layer.shadowRadius = 3
+        googleLoginButton.layer.shadowOpacity = 0.5
+        googleLoginButton.layer.shadowOffset = CGSize(width: 0, height: 1)
+        kakaoLoginButton.layer.cornerRadius = 4
+        kakaoLoginButton.layer.shadowColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+        kakaoLoginButton.layer.shadowRadius = 3
+        kakaoLoginButton.layer.shadowOpacity = 0.5
+        kakaoLoginButton.layer.shadowOffset = CGSize(width: 0, height: 1)
+        appleLoginButton.layer.cornerRadius = 4
+        appleLoginButton.layer.shadowColor = CGColor(red: 0, green: 0, blue: 0, alpha: 0.25)
+        appleLoginButton.layer.shadowRadius = 3
+        appleLoginButton.layer.shadowOpacity = 0.5
+        appleLoginButton.layer.shadowOffset = CGSize(width: 0, height: 1)
         
     }
     
@@ -179,3 +188,53 @@ extension LoginVC{
 }
 
 // MARK: function for login
+extension LoginVC {
+    func googleLoginTest(){
+        GIDSignIn.sharedInstance.signIn(with: self.signInConfig, presenting: self) { user, error in
+            guard error == nil else { return }
+            guard let user = user else { return }
+            print(user)
+                user.authentication.do { authentication, error in
+                    guard error == nil else { return }
+                    guard let authentication = authentication else { return }
+                    guard let idToken = authentication.idToken else { return }
+                    let jwtToken = JwtToken(accessToken: authentication.accessToken, refreshToken: authentication.refreshToken)
+                    KeychainHelper.standard.save(jwtToken, service: "token", account: "student")
+                    NotificationCenter.default.post(name: .authStateDidChange, object: nil)
+                    print(idToken)
+                }
+        }
+    }
+    
+    func googleLogin(){
+        let url = "url"
+        GIDSignIn.sharedInstance.signIn(with: self.signInConfig, presenting: self) { user, error in
+            guard error == nil else { return }
+            guard let user = user else { return }
+
+                user.authentication.do { authentication, error in
+                    guard error == nil else { return }
+                    guard let authentication = authentication else { return }
+                    guard let idToken = authentication.idToken else { return }
+                    let headers:HTTPHeaders = [
+                        "Authorization" : "Bearer \(idToken)"
+                    ]
+                    // Send ID token to backend (example below).
+                    print(idToken)
+                    let param = ["type":"google"]
+                    AF.request(url, method: .post, parameters: param, encoder: JSONParameterEncoder.default, headers: headers)
+                        .responseData { response in switch response.result {
+                        case .success(let data):
+                            guard let jwtToken = AppAuth.parseData(data) else { return }
+                            //자동 로그인을 위한 jwt 저장
+                            KeychainHelper.standard.save(jwtToken, service: "token", account: "student")
+                            NotificationCenter.default.post(name: .authStateDidChange, object: nil)
+                        case.failure(let error):
+                            print("error: \(error)")
+                        }
+                    }
+                }
+            // If sign in succeeded, display the app's main content View.
+          }
+    }
+}
