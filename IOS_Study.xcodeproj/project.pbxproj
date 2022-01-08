@@ -756,7 +756,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U2Z5Z44P4R;
+				DEVELOPMENT_TEAM = SY959SAN47;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IOS_Study/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -770,7 +770,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyk.iOSStudy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hehwa.iOSStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -786,7 +786,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U2Z5Z44P4R;
+				DEVELOPMENT_TEAM = SY959SAN47;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IOS_Study/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -800,7 +800,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyk.iOSStudy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hehwa.iOSStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
