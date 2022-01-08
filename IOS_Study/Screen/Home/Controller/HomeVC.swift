@@ -132,6 +132,7 @@ class HomeVC: UIViewController {
 extension HomeVC {
     // NavigationBar Setting
     func setUpNaviBar() {
+//        customNaviBar.
         customNaviBar.title = "TODAY'S HOMEWORK"
         
         customNaviBar.firstBtn.setImage(UIImage(named: "Alarm"), for: .normal)

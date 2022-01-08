@@ -25,15 +25,19 @@
 		232D1C49277A018800F4A3FC /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D1C48277A018800F4A3FC /* UITextView+.swift */; };
 		2332BBD2278336AC00290B95 /* CustomNB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2332BBD1278336AC00290B95 /* CustomNB.swift */; };
 		2332BBD6278339E400290B95 /* CustomNB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2332BBD5278339E400290B95 /* CustomNB.xib */; };
+		2352922A2788793700387215 /* AllSubjectsDataTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235292292788793700387215 /* AllSubjectsDataTVC.swift */; };
 		23549B10276E014E00B61691 /* MainTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B0F276E014E00B61691 /* MainTBC.swift */; };
 		23549B12276E019100B61691 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B11276E019100B61691 /* ViewControllerFactory.swift */; };
 		23549B14276E06D500B61691 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B13276E06D500B61691 /* Identifiers.swift */; };
 		23549B1D276E0A6F00B61691 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B1C276E0A6F00B61691 /* HomeVC.swift */; };
 		23549B21276E0ABB00B61691 /* ChattingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B20276E0ABB00B61691 /* ChattingVC.swift */; };
 		23549B27276E0AE900B61691 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B26276E0AE900B61691 /* MyPageVC.swift */; };
+		2366A237278829C800B7F8F9 /* SubjectTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2366A236278829C800B7F8F9 /* SubjectTVC.swift */; };
 		23AB78DD2781C4CF00DEC224 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB78DC2781C4CF00DEC224 /* SideMenuVC.swift */; };
 		23AB78DF2781C7DE00DEC224 /* CustomSideMenuNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB78DE2781C7DE00DEC224 /* CustomSideMenuNC.swift */; };
 		23C0B56B2781EAB800735DD9 /* MenuListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C0B56A2781EAB800735DD9 /* MenuListTVC.swift */; };
+		23C74BEA2785FD7500ED4E30 /* ProfileImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23C74BE92785FD7500ED4E30 /* ProfileImage.storyboard */; };
+		23C74BEC2785FD7F00ED4E30 /* ProfileImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C74BEB2785FD7F00ED4E30 /* ProfileImageVC.swift */; };
 		23EFC4E42780C03F000CCAE4 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EFC4E32780C03F000CCAE4 /* SideMenu.storyboard */; };
 		4C66F06E2779937100A678E2 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C66F06D2779937100A678E2 /* SignupVC.swift */; };
 		4C66F0702779939100A678E2 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C66F06F2779939100A678E2 /* Signup.storyboard */; };
@@ -70,6 +74,7 @@
 		232D1C48277A018800F4A3FC /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
 		2332BBD1278336AC00290B95 /* CustomNB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNB.swift; sourceTree = "<group>"; };
 		2332BBD5278339E400290B95 /* CustomNB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNB.xib; sourceTree = "<group>"; };
+		235292292788793700387215 /* AllSubjectsDataTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSubjectsDataTVC.swift; sourceTree = "<group>"; };
 		23549B0F276E014E00B61691 /* MainTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTBC.swift; sourceTree = "<group>"; };
 		23549B11276E019100B61691 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		23549B13276E06D500B61691 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
@@ -80,9 +85,12 @@
 		23549B20276E0ABB00B61691 /* ChattingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingVC.swift; sourceTree = "<group>"; };
 		23549B23276E0ACE00B61691 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		23549B26276E0AE900B61691 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
+		2366A236278829C800B7F8F9 /* SubjectTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTVC.swift; sourceTree = "<group>"; };
 		23AB78DC2781C4CF00DEC224 /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		23AB78DE2781C7DE00DEC224 /* CustomSideMenuNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuNC.swift; sourceTree = "<group>"; };
 		23C0B56A2781EAB800735DD9 /* MenuListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListTVC.swift; sourceTree = "<group>"; };
+		23C74BE92785FD7500ED4E30 /* ProfileImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileImage.storyboard; sourceTree = "<group>"; };
+		23C74BEB2785FD7F00ED4E30 /* ProfileImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageVC.swift; sourceTree = "<group>"; };
 		23EFC4E32780C03F000CCAE4 /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		353FA300CAE148E07E4E025E /* Pods-IOS_Study.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS_Study.debug.xcconfig"; path = "Target Support Files/Pods-IOS_Study/Pods-IOS_Study.debug.xcconfig"; sourceTree = "<group>"; };
 		4C66F06D2779937100A678E2 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
@@ -398,6 +406,7 @@
 			children = (
 				23549B22276E0ABF00B61691 /* Storyboard */,
 				23549B25276E0AD100B61691 /* Controller */,
+				2366A2332788294200B7F8F9 /* Cell */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -406,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				23549B23276E0ACE00B61691 /* MyPage.storyboard */,
+				23C74BE92785FD7500ED4E30 /* ProfileImage.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -414,8 +424,26 @@
 			isa = PBXGroup;
 			children = (
 				23549B26276E0AE900B61691 /* MyPageVC.swift */,
+				23C74BEB2785FD7F00ED4E30 /* ProfileImageVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		2366A2332788294200B7F8F9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2366A2342788297600B7F8F9 /* TVC */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2366A2342788297600B7F8F9 /* TVC */ = {
+			isa = PBXGroup;
+			children = (
+				2366A236278829C800B7F8F9 /* SubjectTVC.swift */,
+				235292292788793700387215 /* AllSubjectsDataTVC.swift */,
+			);
+			path = TVC;
 			sourceTree = "<group>";
 		};
 		4C66F06A277992E500A678E2 /* Signup */ = {
@@ -530,6 +558,7 @@
 				2300658E277B291D00F117D8 /* AppleSDGothicNeoR.ttf in Resources */,
 				2300658F277B291D00F117D8 /* AppleSDGothicNeoB.ttf in Resources */,
 				4C66F0702779939100A678E2 /* Signup.storyboard in Resources */,
+				23C74BEA2785FD7500ED4E30 /* ProfileImage.storyboard in Resources */,
 				2304DE29276E335E00AD0691 /* Assets.xcassets in Resources */,
 				23006590277B291D00F117D8 /* AppleSDGothicNeoSB.ttf in Resources */,
 				2304DE22276E1ABA00AD0691 /* Home.storyboard in Resources */,
@@ -587,6 +616,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2366A237278829C800B7F8F9 /* SubjectTVC.swift in Sources */,
 				2304DE28276E2CE200AD0691 /* LoginVC.swift in Sources */,
 				23549B12276E019100B61691 /* ViewControllerFactory.swift in Sources */,
 				4CA390A72782BB9B009C5B0B /* Notification+.swift in Sources */,
@@ -605,6 +635,7 @@
 				23549B27276E0AE900B61691 /* MyPageVC.swift in Sources */,
 				4CA390AD27844387009C5B0B /* Response.swift in Sources */,
 				4CA39081277B19FE009C5B0B /* Subjects.swift in Sources */,
+				23C74BEC2785FD7F00ED4E30 /* ProfileImageVC.swift in Sources */,
 				4CA3907B277B191A009C5B0B /* MemoCVC.swift in Sources */,
 				23549B21276E0ABB00B61691 /* ChattingVC.swift in Sources */,
 				4CA390B02784609E009C5B0B /* AppAuth.swift in Sources */,
@@ -615,6 +646,7 @@
 				2326B36F2761EDEF00677E7F /* TypeOfViewController.swift in Sources */,
 				4C66F06E2779937100A678E2 /* SignupVC.swift in Sources */,
 				23C0B56B2781EAB800735DD9 /* MenuListTVC.swift in Sources */,
+				2352922A2788793700387215 /* AllSubjectsDataTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,11 +786,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SY959SAN47;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IOS_Study/Support/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 수정을 위한 갤러리 접근 권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
@@ -772,6 +806,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hehwa.iOSStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -784,11 +819,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SY959SAN47;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IOS_Study/Support/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "프로필 사진 수정을 위한 갤러리 접근 권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
@@ -802,6 +839,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hehwa.iOSStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

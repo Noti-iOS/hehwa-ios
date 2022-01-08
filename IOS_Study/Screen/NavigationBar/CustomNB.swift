@@ -71,7 +71,7 @@ class CustomNB: UIView {
     
     private func setUpView() {
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = .clear
         
         seperateBar.backgroundColor = .systemGray3
     }
