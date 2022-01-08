@@ -45,7 +45,9 @@
 		4CA390A92782BC22009C5B0B /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390A82782BC22009C5B0B /* AppController.swift */; };
 		4CA390AB27841CC6009C5B0B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390AA27841CC6009C5B0B /* Login.swift */; };
 		4CA390AD27844387009C5B0B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390AC27844387009C5B0B /* Response.swift */; };
-		4CA390B02784609E009C5B0B /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390AF2784609E009C5B0B /* Auth.swift */; };
+		4CA390B02784609E009C5B0B /* AppAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390AF2784609E009C5B0B /* AppAuth.swift */; };
+		4CA390B22785A283009C5B0B /* JwtToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390B12785A282009C5B0B /* JwtToken.swift */; };
+		4CA390B42785A5E6009C5B0B /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390B32785A5E6009C5B0B /* KeychainHelper.swift */; };
 		7E047FEDE0BD6F2FF8800C32 /* Pods_IOS_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF64998C4B78B78EDC496EC0 /* Pods_IOS_Study.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,7 +95,9 @@
 		4CA390A82782BC22009C5B0B /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		4CA390AA27841CC6009C5B0B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		4CA390AC27844387009C5B0B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		4CA390AF2784609E009C5B0B /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		4CA390AF2784609E009C5B0B /* AppAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAuth.swift; sourceTree = "<group>"; };
+		4CA390B12785A282009C5B0B /* JwtToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtToken.swift; sourceTree = "<group>"; };
+		4CA390B32785A5E6009C5B0B /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		DF64998C4B78B78EDC496EC0 /* Pods_IOS_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -209,6 +213,7 @@
 			children = (
 				4CA39080277B19FE009C5B0B /* Subjects.swift */,
 				4CA390AA27841CC6009C5B0B /* Login.swift */,
+				4CA390B12785A282009C5B0B /* JwtToken.swift */,
 				23549B13276E06D500B61691 /* Identifiers.swift */,
 			);
 			path = Struct;
@@ -442,7 +447,8 @@
 			isa = PBXGroup;
 			children = (
 				4CA390AC27844387009C5B0B /* Response.swift */,
-				4CA390AF2784609E009C5B0B /* Auth.swift */,
+				4CA390B32785A5E6009C5B0B /* KeychainHelper.swift */,
+				4CA390AF2784609E009C5B0B /* AppAuth.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -592,6 +598,7 @@
 				4CA3907D277B1954009C5B0B /* SubjectListCVC.swift in Sources */,
 				2332BBD2278336AC00290B95 /* CustomNB.swift in Sources */,
 				23549B1D276E0A6F00B61691 /* HomeVC.swift in Sources */,
+				4CA390B42785A5E6009C5B0B /* KeychainHelper.swift in Sources */,
 				4CA390A92782BC22009C5B0B /* AppController.swift in Sources */,
 				2304DE1A276E0E3400AD0691 /* AppDelegate.swift in Sources */,
 				4CA390AB27841CC6009C5B0B /* Login.swift in Sources */,
@@ -600,10 +607,11 @@
 				4CA39081277B19FE009C5B0B /* Subjects.swift in Sources */,
 				4CA3907B277B191A009C5B0B /* MemoCVC.swift in Sources */,
 				23549B21276E0ABB00B61691 /* ChattingVC.swift in Sources */,
-				4CA390B02784609E009C5B0B /* Auth.swift in Sources */,
+				4CA390B02784609E009C5B0B /* AppAuth.swift in Sources */,
 				2326B36D2761EDD600677E7F /* StoryboardRepresentation.swift in Sources */,
 				23AB78DD2781C4CF00DEC224 /* SideMenuVC.swift in Sources */,
 				23549B10276E014E00B61691 /* MainTBC.swift in Sources */,
+				4CA390B22785A283009C5B0B /* JwtToken.swift in Sources */,
 				2326B36F2761EDEF00677E7F /* TypeOfViewController.swift in Sources */,
 				4C66F06E2779937100A678E2 /* SignupVC.swift in Sources */,
 				23C0B56B2781EAB800735DD9 /* MenuListTVC.swift in Sources */,
@@ -748,7 +756,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U2Z5Z44P4R;
+				DEVELOPMENT_TEAM = SY959SAN47;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IOS_Study/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -762,7 +770,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyk.iOSStudy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hehwa.iOSStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -778,7 +786,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = U2Z5Z44P4R;
+				DEVELOPMENT_TEAM = SY959SAN47;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IOS_Study/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -792,7 +800,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyk.iOSStudy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hehwa.iOSStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

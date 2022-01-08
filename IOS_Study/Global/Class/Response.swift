@@ -10,13 +10,13 @@ import Foundation
 // MARK: Response Class
 // api 통신시 response 관리를 위한 decodable 클래스 생성 필요한 통신마다 response를 상속해 데이터 decoder
 // 임의의 class proterty
-class Response: Decodable {
+class Response: Codable {
     var result:[Int]
 }
 
 // MARK: Response 상속
 class LoginResponse: Response {
-    let jwtToken: String
+    let jwtToken: JwtToken
     
     enum CodingKeys: String, CodingKey{
         case jwtToken
@@ -24,7 +24,7 @@ class LoginResponse: Response {
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.jwtToken = try container.decode(String.self, forKey: .jwtToken)
+        self.jwtToken = try container.decode(JwtToken.self, forKey: .jwtToken)
         try super.init(from: decoder)
     }
 }

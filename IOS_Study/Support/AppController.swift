@@ -47,10 +47,11 @@ class AppController {
     }
     
     @objc private func checkLoginIn() {
-        guard let hasJwtToken = UserDefaults.standard.string(forKey: "jwtToken") else {
+        guard let token = KeychainHelper.standard.read(service: "token", account: "student", type: JwtToken.self) else {
             routeToLogin()
             return
         }
+        print("access: \(token.accessToken), refresh: \(token.refreshToken)")
         setHome()
     }
 }
