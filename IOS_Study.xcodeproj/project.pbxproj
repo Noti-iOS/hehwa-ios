@@ -25,6 +25,7 @@
 		232D1C49277A018800F4A3FC /* UITextView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D1C48277A018800F4A3FC /* UITextView+.swift */; };
 		2332BBD2278336AC00290B95 /* CustomNB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2332BBD1278336AC00290B95 /* CustomNB.swift */; };
 		2332BBD6278339E400290B95 /* CustomNB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2332BBD5278339E400290B95 /* CustomNB.xib */; };
+		2352922A2788793700387215 /* AllSubjectsDataTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235292292788793700387215 /* AllSubjectsDataTVC.swift */; };
 		23549B10276E014E00B61691 /* MainTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B0F276E014E00B61691 /* MainTBC.swift */; };
 		23549B12276E019100B61691 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B11276E019100B61691 /* ViewControllerFactory.swift */; };
 		23549B14276E06D500B61691 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23549B13276E06D500B61691 /* Identifiers.swift */; };
@@ -71,6 +72,7 @@
 		232D1C48277A018800F4A3FC /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
 		2332BBD1278336AC00290B95 /* CustomNB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNB.swift; sourceTree = "<group>"; };
 		2332BBD5278339E400290B95 /* CustomNB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNB.xib; sourceTree = "<group>"; };
+		235292292788793700387215 /* AllSubjectsDataTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSubjectsDataTVC.swift; sourceTree = "<group>"; };
 		23549B0F276E014E00B61691 /* MainTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTBC.swift; sourceTree = "<group>"; };
 		23549B11276E019100B61691 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		23549B13276E06D500B61691 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				2366A236278829C800B7F8F9 /* SubjectTVC.swift */,
+				235292292788793700387215 /* AllSubjectsDataTVC.swift */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				2326B36F2761EDEF00677E7F /* TypeOfViewController.swift in Sources */,
 				4C66F06E2779937100A678E2 /* SignupVC.swift in Sources */,
 				23C0B56B2781EAB800735DD9 /* MenuListTVC.swift in Sources */,
+				2352922A2788793700387215 /* AllSubjectsDataTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,6 +778,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U2Z5Z44P4R;
@@ -793,6 +798,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hehwa.iOSStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -805,6 +811,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U2Z5Z44P4R;
@@ -824,6 +831,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hehwa.iOSStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

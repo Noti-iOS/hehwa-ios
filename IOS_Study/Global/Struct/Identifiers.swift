@@ -34,6 +34,7 @@ struct Identifiers {
     static let homeworkListTVC = "HomeworkListTVC"
     static let menuListTVC = "MenuListTVC"
     static let subjectTVC = "SubjectTVC"
+    static let allSubjectDataTVC = "AllSubjectDataTVC"
     
     //MARK: - View
 }

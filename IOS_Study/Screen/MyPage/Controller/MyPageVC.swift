@@ -9,6 +9,7 @@ import UIKit
 import Photos
 
 class MyPageVC: UIViewController {
+    // 임시 Data Set
     let subjects = [
         Subjects("수학", "윤경T", ["쎈 수학 p110~120", "곱셈공식 암기"]),
         Subjects("영어", "호준T", ["단어 Day 7 암기", "영어 문법(초록책) p20~24", "수능특강 p11~14"]),
@@ -176,6 +177,12 @@ extension MyPageVC {
             school.textColor = .systemGray
             parentsPhone.textColor = .systemGray
         }
+        
+        // 열려있는 모든 과목별 숙제, 출석 목록 닫기
+        for i in 0..<isopened.count {
+            isopened[i] = false
+        }
+        subjectsListTV.reloadData()
     }
 }
 
@@ -220,7 +227,15 @@ extension MyPageVC: UITableViewDataSource {
             
             return sectionCell
         } else {
-            let cell = subjectsListTV.dequeueReusableCell(withIdentifier: "HomeworkTVC", for: indexPath)
+            let cell = subjectsListTV.dequeueReusableCell(withIdentifier: Identifiers.allSubjectDataTVC, for: indexPath) as! AllSubjectsDataTVC
+            cell.selectionStyle = .none
+            
+            if indexPath.row == 1 {
+                cell.title.text = "숙제"
+            } else {
+                cell.title.text = "출석"
+            }
+            
             return cell
         }
     }
@@ -232,6 +247,7 @@ extension MyPageVC: UITableViewDelegate {
             isopened[indexPath.section].toggle()
             
             subjectsListTV.reloadSections([indexPath.section], with: .none)
+            subjectsListTV.scrollToRow(at: indexPath, at: .top, animated: true)
         }
     }
 }

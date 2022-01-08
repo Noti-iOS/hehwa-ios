@@ -120,7 +120,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aV-Au-4rQ">
-                                                    <rect key="frame" x="20" y="9" width="64" height="27.5"/>
+                                                    <rect key="frame" x="20" y="9" width="63.5" height="27.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="rAA-Yh-L4g"/>
                                                     </constraints>
@@ -142,7 +142,7 @@
                                             <outlet property="subjectName" destination="3aV-Au-4rQ" id="Lp5-uO-nWn"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeworkTVC" rowHeight="202" id="3nn-sg-wD2" customClass="SubjectTVC" customModule="IOS_Study" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AllSubjectDataTVC" rowHeight="202" id="3nn-sg-wD2" customClass="AllSubjectsDataTVC" customModule="IOS_Study" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="90" width="414" height="202"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3nn-sg-wD2" id="eSN-LC-qIK">
@@ -151,20 +151,21 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숙제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELf-g8-LME">
                                                     <rect key="frame" x="20" y="11" width="25" height="18"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="18" id="vkj-Th-0fj"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeoR00" family="AppleSDGothicNeoR00" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ka1-Me-KhO">
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ka1-Me-KhO">
                                                     <rect key="frame" x="53" y="18" width="190" height="4"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="4" id="beJ-ie-667"/>
+                                                    </constraints>
                                                 </progressView>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oIL-0L-wIF">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oIL-0L-wIF">
                                                     <rect key="frame" x="307" y="5" width="87" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="oIL-0L-wIF" secondAttribute="height" multiplier="87:31" id="laJ-C8-HeD"/>
+                                                    </constraints>
                                                     <segments>
                                                         <segment title="완료"/>
                                                         <segment title="미완료"/>
@@ -174,26 +175,68 @@
                                                     <rect key="frame" x="20" y="44" width="374" height="147"/>
                                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="147" id="Tvh-Ag-QIY"/>
+                                                        <constraint firstAttribute="height" constant="147" id="RpQ-k3-BZs"/>
                                                     </constraints>
+                                                    <prototypes>
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeworkList" id="vQ0-WT-Xhm">
+                                                            <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vQ0-WT-Xhm" id="jlO-MN-hBS">
+                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsB-mB-8sC">
+                                                                        <rect key="frame" x="20" y="11.5" width="39" height="21"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="21" id="c34-hG-x9B"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeoR00" family="AppleSDGothicNeoR00" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="WsB-mB-8sC" firstAttribute="leading" secondItem="jlO-MN-hBS" secondAttribute="leadingMargin" id="Jg0-YC-66i"/>
+                                                                    <constraint firstItem="WsB-mB-8sC" firstAttribute="centerY" secondItem="jlO-MN-hBS" secondAttribute="centerY" id="P8M-09-38o"/>
+                                                                </constraints>
+                                                            </tableViewCellContentView>
+                                                        </tableViewCell>
+                                                    </prototypes>
                                                 </tableView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="70%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdz-HI-cYC">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdz-HI-cYC">
                                                     <rect key="frame" x="251" y="13" width="24" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeoR00" family="AppleSDGothicNeoR00" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="fXt-bB-9Ab" firstAttribute="top" secondItem="ELf-g8-LME" secondAttribute="bottom" constant="15" id="BrW-ZX-azt"/>
-                                                <constraint firstItem="ELf-g8-LME" firstAttribute="leading" secondItem="eSN-LC-qIK" secondAttribute="leadingMargin" id="D78-hI-W5S"/>
-                                                <constraint firstItem="fXt-bB-9Ab" firstAttribute="leading" secondItem="eSN-LC-qIK" secondAttribute="leadingMargin" id="Hcf-RB-1N2"/>
-                                                <constraint firstItem="fXt-bB-9Ab" firstAttribute="bottom" secondItem="eSN-LC-qIK" secondAttribute="bottomMargin" id="J4B-o4-xNG"/>
-                                                <constraint firstItem="fXt-bB-9Ab" firstAttribute="trailing" secondItem="eSN-LC-qIK" secondAttribute="trailingMargin" id="Uaj-1Q-S3p"/>
-                                                <constraint firstItem="ELf-g8-LME" firstAttribute="top" secondItem="eSN-LC-qIK" secondAttribute="topMargin" id="xt0-7H-BrL"/>
+                                                <constraint firstItem="ELf-g8-LME" firstAttribute="leading" secondItem="eSN-LC-qIK" secondAttribute="leadingMargin" id="1yS-bZ-Uyv"/>
+                                                <constraint firstItem="Ka1-Me-KhO" firstAttribute="top" secondItem="eSN-LC-qIK" secondAttribute="topMargin" constant="7" id="Ayt-in-ngV"/>
+                                                <constraint firstItem="fXt-bB-9Ab" firstAttribute="bottom" secondItem="eSN-LC-qIK" secondAttribute="bottomMargin" id="BED-2Z-62b"/>
+                                                <constraint firstItem="fXt-bB-9Ab" firstAttribute="top" secondItem="Ka1-Me-KhO" secondAttribute="bottom" constant="22" id="F2G-HW-NCu"/>
+                                                <constraint firstItem="oIL-0L-wIF" firstAttribute="leading" secondItem="xdz-HI-cYC" secondAttribute="trailing" constant="32" id="FDH-H9-f3i"/>
+                                                <constraint firstItem="fXt-bB-9Ab" firstAttribute="top" secondItem="xdz-HI-cYC" secondAttribute="bottom" constant="16" id="Hzz-So-CCQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="oIL-0L-wIF" secondAttribute="trailing" constant="20" symbolic="YES" id="Rs7-0e-InF"/>
+                                                <constraint firstItem="fXt-bB-9Ab" firstAttribute="top" secondItem="ELf-g8-LME" secondAttribute="bottom" constant="15" id="UZ9-yI-iEp"/>
+                                                <constraint firstItem="fXt-bB-9Ab" firstAttribute="top" secondItem="oIL-0L-wIF" secondAttribute="bottom" constant="8" symbolic="YES" id="Wfj-Fq-cx7"/>
+                                                <constraint firstItem="xdz-HI-cYC" firstAttribute="top" secondItem="eSN-LC-qIK" secondAttribute="topMargin" constant="2" id="Zw2-zf-hWA"/>
+                                                <constraint firstItem="fXt-bB-9Ab" firstAttribute="centerX" secondItem="eSN-LC-qIK" secondAttribute="centerX" id="a5z-gT-Hmq"/>
+                                                <constraint firstItem="fXt-bB-9Ab" firstAttribute="leading" secondItem="eSN-LC-qIK" secondAttribute="leadingMargin" id="aGN-aC-UPq"/>
+                                                <constraint firstItem="oIL-0L-wIF" firstAttribute="top" secondItem="eSN-LC-qIK" secondAttribute="top" constant="5" id="ipV-yt-5SU"/>
+                                                <constraint firstItem="fXt-bB-9Ab" firstAttribute="trailing" secondItem="eSN-LC-qIK" secondAttribute="trailingMargin" id="nRt-W7-KEM"/>
+                                                <constraint firstItem="Ka1-Me-KhO" firstAttribute="leading" secondItem="ELf-g8-LME" secondAttribute="trailing" constant="8" symbolic="YES" id="oXd-0I-uGt"/>
+                                                <constraint firstItem="ELf-g8-LME" firstAttribute="top" secondItem="eSN-LC-qIK" secondAttribute="topMargin" id="qHT-mm-npL"/>
+                                                <constraint firstItem="xdz-HI-cYC" firstAttribute="leading" secondItem="Ka1-Me-KhO" secondAttribute="trailing" constant="8" symbolic="YES" id="zqe-Sx-Prz"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dataList" destination="fXt-bB-9Ab" id="zSe-fG-k7l"/>
+                                            <outlet property="isDone" destination="oIL-0L-wIF" id="eh4-xn-Q4w"/>
+                                            <outlet property="percent" destination="xdz-HI-cYC" id="eJe-BU-uxR"/>
+                                            <outlet property="progressBar" destination="Ka1-Me-KhO" id="kQj-GX-yIq"/>
+                                            <outlet property="title" destination="ELf-g8-LME" id="lff-rO-4te"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
