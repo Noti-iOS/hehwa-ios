@@ -138,12 +138,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkP-7i-h00">
-                                                    <rect key="frame" x="368" y="11" width="19" height="22"/>
-                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="ellipsis" catalog="system"/>
-                                                </button>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ejz-Di-0jX">
                                                     <rect key="frame" x="18" y="39" width="378" height="128"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -210,10 +204,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="Ejz-Di-0jX" secondAttribute="trailing" constant="18" id="KzA-iC-g85"/>
                                                 <constraint firstItem="a63-2J-v8c" firstAttribute="top" secondItem="m6S-sf-nHb" secondAttribute="top" constant="14" id="WUh-Mh-BB3"/>
                                                 <constraint firstItem="a63-2J-v8c" firstAttribute="leading" secondItem="ud3-o6-Wij" secondAttribute="trailing" constant="8" symbolic="YES" id="Xwv-Nf-cZT"/>
-                                                <constraint firstItem="DkP-7i-h00" firstAttribute="top" secondItem="m6S-sf-nHb" secondAttribute="top" constant="11" id="a8R-iF-O1f"/>
                                                 <constraint firstItem="Ejz-Di-0jX" firstAttribute="top" secondItem="ud3-o6-Wij" secondAttribute="bottom" constant="4" id="h4n-OX-9Nf"/>
                                                 <constraint firstItem="ud3-o6-Wij" firstAttribute="leading" secondItem="m6S-sf-nHb" secondAttribute="leading" constant="30" id="odE-so-7Wz"/>
-                                                <constraint firstAttribute="trailing" secondItem="DkP-7i-h00" secondAttribute="trailing" constant="27" id="uGt-WX-ngo"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="175"/>
@@ -237,12 +229,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pea-Y9-P9N">
-                                                    <rect key="frame" x="368" y="11" width="19" height="22"/>
-                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="ellipsis" catalog="system"/>
-                                                </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mav-CH-axj">
                                                     <rect key="frame" x="18" y="42.5" width="378" height="118.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -259,8 +245,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="mav-CH-axj" secondAttribute="trailing" constant="18" id="YoK-bm-Y5i"/>
                                                 <constraint firstItem="vxa-P2-Xms" firstAttribute="leading" secondItem="pHK-us-Ayz" secondAttribute="leading" constant="30" id="cTo-Ku-nGb"/>
                                                 <constraint firstItem="mav-CH-axj" firstAttribute="leading" secondItem="pHK-us-Ayz" secondAttribute="leading" constant="18" id="hVo-Kg-WwE"/>
-                                                <constraint firstItem="Pea-Y9-P9N" firstAttribute="top" secondItem="pHK-us-Ayz" secondAttribute="top" constant="11" id="xKA-KI-lW9"/>
-                                                <constraint firstAttribute="trailing" secondItem="Pea-Y9-P9N" secondAttribute="trailing" constant="27" id="xaA-Zh-YGl"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="414" height="175"/>
@@ -308,7 +292,6 @@
         <image name="CheckBox_UnSelected" width="24" height="24"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
