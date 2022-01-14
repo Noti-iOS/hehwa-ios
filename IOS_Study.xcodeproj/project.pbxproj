@@ -52,6 +52,10 @@
 		4CA390B02784609E009C5B0B /* AppAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390AF2784609E009C5B0B /* AppAuth.swift */; };
 		4CA390B22785A283009C5B0B /* JwtToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390B12785A282009C5B0B /* JwtToken.swift */; };
 		4CA390B42785A5E6009C5B0B /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390B32785A5E6009C5B0B /* KeychainHelper.swift */; };
+		4CA390B627913D81009C5B0B /* AddChatting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA390B527913D80009C5B0B /* AddChatting.storyboard */; };
+		4CA390B827913D9A009C5B0B /* StartChatting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA390B727913D9A009C5B0B /* StartChatting.storyboard */; };
+		4CA390BA27913DD8009C5B0B /* AddChattingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390B927913DD8009C5B0B /* AddChattingVC.swift */; };
+		4CA390BC27913DF2009C5B0B /* StartChattingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390BB27913DF2009C5B0B /* StartChattingVC.swift */; };
 		7E047FEDE0BD6F2FF8800C32 /* Pods_IOS_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF64998C4B78B78EDC496EC0 /* Pods_IOS_Study.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +110,10 @@
 		4CA390AF2784609E009C5B0B /* AppAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAuth.swift; sourceTree = "<group>"; };
 		4CA390B12785A282009C5B0B /* JwtToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtToken.swift; sourceTree = "<group>"; };
 		4CA390B32785A5E6009C5B0B /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		4CA390B527913D80009C5B0B /* AddChatting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddChatting.storyboard; sourceTree = "<group>"; };
+		4CA390B727913D9A009C5B0B /* StartChatting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartChatting.storyboard; sourceTree = "<group>"; };
+		4CA390B927913DD8009C5B0B /* AddChattingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChattingVC.swift; sourceTree = "<group>"; };
+		4CA390BB27913DF2009C5B0B /* StartChattingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartChattingVC.swift; sourceTree = "<group>"; };
 		DF64998C4B78B78EDC496EC0 /* Pods_IOS_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -289,6 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				23549B1E276E0AAD00B61691 /* Chatting.storyboard */,
+				4CA390B527913D80009C5B0B /* AddChatting.storyboard */,
+				4CA390B727913D9A009C5B0B /* StartChatting.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -297,6 +307,8 @@
 			isa = PBXGroup;
 			children = (
 				23549B20276E0ABB00B61691 /* ChattingVC.swift */,
+				4CA390B927913DD8009C5B0B /* AddChattingVC.swift */,
+				4CA390BB27913DF2009C5B0B /* StartChattingVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -550,6 +562,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA390B627913D81009C5B0B /* AddChatting.storyboard in Resources */,
 				2304DE24276E1AD500AD0691 /* Chatting.storyboard in Resources */,
 				2304DE21276E19F500AD0691 /* TabBar.storyboard in Resources */,
 				2304DE23276E1AD000AD0691 /* MyPage.storyboard in Resources */,
@@ -564,6 +577,7 @@
 				2304DE22276E1ABA00AD0691 /* Home.storyboard in Resources */,
 				23EFC4E42780C03F000CCAE4 /* SideMenu.storyboard in Resources */,
 				23006591277B291D00F117D8 /* AppleSDGothicNeoM.ttf in Resources */,
+				4CA390B827913D9A009C5B0B /* StartChatting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,11 +632,13 @@
 			files = (
 				2366A237278829C800B7F8F9 /* SubjectTVC.swift in Sources */,
 				2304DE28276E2CE200AD0691 /* LoginVC.swift in Sources */,
+				4CA390BA27913DD8009C5B0B /* AddChattingVC.swift in Sources */,
 				23549B12276E019100B61691 /* ViewControllerFactory.swift in Sources */,
 				4CA390A72782BB9B009C5B0B /* Notification+.swift in Sources */,
 				23549B14276E06D500B61691 /* Identifiers.swift in Sources */,
 				232D1C49277A018800F4A3FC /* UITextView+.swift in Sources */,
 				232D1C47277A008F00F4A3FC /* UITextField+.swift in Sources */,
+				4CA390BC27913DF2009C5B0B /* StartChattingVC.swift in Sources */,
 				4CA3907F277B195E009C5B0B /* HomeworkListTVC.swift in Sources */,
 				23AB78DF2781C7DE00DEC224 /* CustomSideMenuNC.swift in Sources */,
 				4CA3907D277B1954009C5B0B /* SubjectListCVC.swift in Sources */,
