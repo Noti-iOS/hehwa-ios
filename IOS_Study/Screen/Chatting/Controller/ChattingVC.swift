@@ -2,13 +2,13 @@
 //  ChattingVC.swift
 //  IOS_Study
 //
-//  Created by 황윤경 on 2021/12/18.
+//  Created by ho jun lim on 2022/01/15.
 //
 
 import UIKit
 
 class ChattingVC: UIViewController {
- 
+    // animator 선언
     let chattingList = [ChattingInfo(userImage: UIImage(named: "SampleProfileImg")!, userName: "hojoon", chattingMessage: "hi", chattingTime: "오후 1:30"),
                         ChattingInfo(userImage: UIImage(named: "SampleProfileImg")!, userName: "hojoon", chattingMessage: "hi", chattingTime: "오후 1:30"),
                         ChattingInfo(userImage: UIImage(named: "SampleProfileImg")!, userName: "hojoon", chattingMessage: "hi", chattingTime: "오후 1:30"),
@@ -52,7 +52,8 @@ extension ChattingVC{
     
     func startChatting(){
         let startChattingVC = ViewControllerFactory.viewController(for: .startChatting)
-        startChattingVC.modalPresentationStyle = .fullScreen
+        startChattingVC.modalPresentationStyle = .custom
+        startChattingVC.transitioningDelegate = self
         self.present(startChattingVC, animated: true, completion: nil)
     }
 }
@@ -80,6 +81,15 @@ extension ChattingVC:UITableViewDataSource{
         cell.update(chattingInfo: chattingList[indexPath.row])
         return cell
     }
+}
 
-
+//MARK: - UIViewControllerTransitioningDelegate
+extension ChattingVC:UIViewControllerTransitioningDelegate {
+    //Transition 선언
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PresentTransition()
+    }
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return DismissTransition()
+    }
 }
