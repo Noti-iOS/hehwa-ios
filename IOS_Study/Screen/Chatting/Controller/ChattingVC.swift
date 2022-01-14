@@ -23,9 +23,8 @@ extension ChattingVC{
     func setUpNaviBar() {
 //        customNaviBar.
         customNaviBar.title = "CHATTING"
-        
-        customNaviBar.firstBtn.setImage(UIImage(named: "Alarm"), for: .normal)
-        customNaviBar.secondBtn.setImage(UIImage(named: "ETC"), for: .normal)
+        customNaviBar.isFirstBtnEnabled = false
+        customNaviBar.secondBtn.setImage(UIImage(named: "Add_Circle"), for: .normal)
 
     }
 }
