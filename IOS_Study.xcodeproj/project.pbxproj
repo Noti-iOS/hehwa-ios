@@ -56,6 +56,8 @@
 		4CA390B827913D9A009C5B0B /* StartChatting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CA390B727913D9A009C5B0B /* StartChatting.storyboard */; };
 		4CA390BA27913DD8009C5B0B /* AddChattingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390B927913DD8009C5B0B /* AddChattingVC.swift */; };
 		4CA390BC27913DF2009C5B0B /* StartChattingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390BB27913DF2009C5B0B /* StartChattingVC.swift */; };
+		4CA390C02791495E009C5B0B /* ChattingListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390BF2791495E009C5B0B /* ChattingListTVC.swift */; };
+		4CA390C2279159BD009C5B0B /* ChattingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390C1279159BD009C5B0B /* ChattingInfo.swift */; };
 		7E047FEDE0BD6F2FF8800C32 /* Pods_IOS_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF64998C4B78B78EDC496EC0 /* Pods_IOS_Study.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +116,8 @@
 		4CA390B727913D9A009C5B0B /* StartChatting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartChatting.storyboard; sourceTree = "<group>"; };
 		4CA390B927913DD8009C5B0B /* AddChattingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChattingVC.swift; sourceTree = "<group>"; };
 		4CA390BB27913DF2009C5B0B /* StartChattingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartChattingVC.swift; sourceTree = "<group>"; };
+		4CA390BF2791495E009C5B0B /* ChattingListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingListTVC.swift; sourceTree = "<group>"; };
+		4CA390C1279159BD009C5B0B /* ChattingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingInfo.swift; sourceTree = "<group>"; };
 		DF64998C4B78B78EDC496EC0 /* Pods_IOS_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -228,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				4CA39080277B19FE009C5B0B /* Subjects.swift */,
+				4CA390C1279159BD009C5B0B /* ChattingInfo.swift */,
 				4CA390AA27841CC6009C5B0B /* Login.swift */,
 				4CA390B12785A282009C5B0B /* JwtToken.swift */,
 				23549B13276E06D500B61691 /* Identifiers.swift */,
@@ -262,6 +267,7 @@
 		2326B35B2761EC8B00677E7F /* Chatting */ = {
 			isa = PBXGroup;
 			children = (
+				4CA390BD27914928009C5B0B /* Cell */,
 				2326B35F2761ED0100677E7F /* Storyboard */,
 				2326B3602761ED0B00677E7F /* Controller */,
 			);
@@ -493,6 +499,22 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
+		4CA390BD27914928009C5B0B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4CA390BE27914931009C5B0B /* TVC */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4CA390BE27914931009C5B0B /* TVC */ = {
+			isa = PBXGroup;
+			children = (
+				4CA390BF2791495E009C5B0B /* ChattingListTVC.swift */,
+			);
+			path = TVC;
+			sourceTree = "<group>";
+		};
 		F45527BFBD8BC6C365249373 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,11 +676,13 @@
 				23C74BEC2785FD7F00ED4E30 /* ProfileImageVC.swift in Sources */,
 				4CA3907B277B191A009C5B0B /* MemoCVC.swift in Sources */,
 				23549B21276E0ABB00B61691 /* ChattingVC.swift in Sources */,
+				4CA390C2279159BD009C5B0B /* ChattingInfo.swift in Sources */,
 				4CA390B02784609E009C5B0B /* AppAuth.swift in Sources */,
 				2326B36D2761EDD600677E7F /* StoryboardRepresentation.swift in Sources */,
 				23AB78DD2781C4CF00DEC224 /* SideMenuVC.swift in Sources */,
 				23549B10276E014E00B61691 /* MainTBC.swift in Sources */,
 				4CA390B22785A283009C5B0B /* JwtToken.swift in Sources */,
+				4CA390C02791495E009C5B0B /* ChattingListTVC.swift in Sources */,
 				2326B36F2761EDEF00677E7F /* TypeOfViewController.swift in Sources */,
 				4C66F06E2779937100A678E2 /* SignupVC.swift in Sources */,
 				23C0B56B2781EAB800735DD9 /* MenuListTVC.swift in Sources */,
