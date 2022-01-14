@@ -25,5 +25,8 @@ class AddChattingVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func dismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

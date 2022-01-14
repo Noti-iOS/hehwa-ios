@@ -57,10 +57,17 @@ extension ChattingVC{
     }
 }
 
+//MARK: - UITableViewDelegate
 extension ChattingVC:UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // cell 선택 후 해제
+        chattingListTV.deselectRow(at: indexPath, animated: true)
+        // cell 선택시 채팅 시작
+        startChatting()
+    }
 }
 
+//MARK: - UITableViewDataSource
 extension ChattingVC:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chattingList.count

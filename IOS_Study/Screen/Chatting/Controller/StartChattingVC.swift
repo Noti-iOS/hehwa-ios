@@ -26,4 +26,7 @@ class StartChattingVC: UIViewController {
     }
     */
 
+    @IBAction func dismiss(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

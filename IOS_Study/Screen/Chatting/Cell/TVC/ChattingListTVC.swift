@@ -15,12 +15,12 @@ class ChattingListTVC: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupUI()
+        setupCell()
 
     }
 }
 
-//MARK: custom method
+//MARK: - custom method
 extension ChattingListTVC{
     // cell update
     func update(chattingInfo:ChattingInfo){
@@ -30,7 +30,11 @@ extension ChattingListTVC{
         chattingTime.text = chattingInfo.chattingTime
     }
     
-    func setupUI(){
+    func setupCell(){
         userImage.layer.cornerRadius = 15
+        // cell 클릭시 background color 설정
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(named: "CfColor")
+        self.selectedBackgroundView = backgroundView
     }
 }
