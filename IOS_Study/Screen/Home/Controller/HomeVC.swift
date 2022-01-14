@@ -33,6 +33,7 @@ class HomeVC: UIViewController {
     private lazy var monthDateFormatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "MMM, yyyy"
+        df.locale = Locale(identifier: "en_US")
         return df
     }()
     private lazy var dayDateFormatter: DateFormatter = {
