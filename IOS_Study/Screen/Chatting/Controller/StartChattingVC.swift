@@ -11,7 +11,6 @@ class StartChattingVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -27,6 +26,6 @@ class StartChattingVC: UIViewController {
     */
 
     @IBAction func dismiss(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }

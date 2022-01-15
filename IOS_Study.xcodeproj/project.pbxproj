@@ -60,6 +60,8 @@
 		4CA390C2279159BD009C5B0B /* ChattingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390C1279159BD009C5B0B /* ChattingInfo.swift */; };
 		4CA390C42791E0FE009C5B0B /* PresentTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390C32791E0FD009C5B0B /* PresentTransition.swift */; };
 		4CA390C62791E11F009C5B0B /* DismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390C52791E11F009C5B0B /* DismissTransition.swift */; };
+		4CA390C82792CAA9009C5B0B /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390C72792CAA8009C5B0B /* UINavigationController+.swift */; };
+		4CA390CA2792D0AA009C5B0B /* ChattingNB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA390C92792D0AA009C5B0B /* ChattingNB.xib */; };
 		7E047FEDE0BD6F2FF8800C32 /* Pods_IOS_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF64998C4B78B78EDC496EC0 /* Pods_IOS_Study.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +124,8 @@
 		4CA390C1279159BD009C5B0B /* ChattingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingInfo.swift; sourceTree = "<group>"; };
 		4CA390C32791E0FD009C5B0B /* PresentTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentTransition.swift; sourceTree = "<group>"; };
 		4CA390C52791E11F009C5B0B /* DismissTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissTransition.swift; sourceTree = "<group>"; };
+		4CA390C72792CAA8009C5B0B /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
+		4CA390C92792D0AA009C5B0B /* ChattingNB.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingNB.xib; sourceTree = "<group>"; };
 		DF64998C4B78B78EDC496EC0 /* Pods_IOS_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -384,6 +388,7 @@
 			children = (
 				232D1C46277A008F00F4A3FC /* UITextField+.swift */,
 				4CA390A62782BB9B009C5B0B /* Notification+.swift */,
+				4CA390C72792CAA8009C5B0B /* UINavigationController+.swift */,
 				232D1C48277A018800F4A3FC /* UITextView+.swift */,
 			);
 			path = Extension;
@@ -394,6 +399,7 @@
 			children = (
 				2332BBD1278336AC00290B95 /* CustomNB.swift */,
 				2332BBD5278339E400290B95 /* CustomNB.xib */,
+				4CA390C92792D0AA009C5B0B /* ChattingNB.xib */,
 			);
 			path = NavigationBar;
 			sourceTree = "<group>";
@@ -602,6 +608,7 @@
 				23C74BEA2785FD7500ED4E30 /* ProfileImage.storyboard in Resources */,
 				2304DE29276E335E00AD0691 /* Assets.xcassets in Resources */,
 				23006590277B291D00F117D8 /* AppleSDGothicNeoSB.ttf in Resources */,
+				4CA390CA2792D0AA009C5B0B /* ChattingNB.xib in Resources */,
 				2304DE22276E1ABA00AD0691 /* Home.storyboard in Resources */,
 				23EFC4E42780C03F000CCAE4 /* SideMenu.storyboard in Resources */,
 				23006591277B291D00F117D8 /* AppleSDGothicNeoM.ttf in Resources */,
@@ -689,6 +696,7 @@
 				23AB78DD2781C4CF00DEC224 /* SideMenuVC.swift in Sources */,
 				4CA390C62791E11F009C5B0B /* DismissTransition.swift in Sources */,
 				23549B10276E014E00B61691 /* MainTBC.swift in Sources */,
+				4CA390C82792CAA9009C5B0B /* UINavigationController+.swift in Sources */,
 				4CA390B22785A283009C5B0B /* JwtToken.swift in Sources */,
 				4CA390C02791495E009C5B0B /* ChattingListTVC.swift in Sources */,
 				2326B36F2761EDEF00677E7F /* TypeOfViewController.swift in Sources */,
