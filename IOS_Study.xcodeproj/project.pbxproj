@@ -62,6 +62,7 @@
 		4CA390C62791E11F009C5B0B /* DismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390C52791E11F009C5B0B /* DismissTransition.swift */; };
 		4CA390C82792CAA9009C5B0B /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390C72792CAA8009C5B0B /* UINavigationController+.swift */; };
 		4CA390CA2792D0AA009C5B0B /* ChattingNB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA390C92792D0AA009C5B0B /* ChattingNB.xib */; };
+		4CA390CE2793EDAE009C5B0B /* AddChattingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390CD2793EDAE009C5B0B /* AddChattingTVC.swift */; };
 		7E047FEDE0BD6F2FF8800C32 /* Pods_IOS_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF64998C4B78B78EDC496EC0 /* Pods_IOS_Study.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +127,7 @@
 		4CA390C52791E11F009C5B0B /* DismissTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissTransition.swift; sourceTree = "<group>"; };
 		4CA390C72792CAA8009C5B0B /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
 		4CA390C92792D0AA009C5B0B /* ChattingNB.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingNB.xib; sourceTree = "<group>"; };
+		4CA390CD2793EDAE009C5B0B /* AddChattingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChattingTVC.swift; sourceTree = "<group>"; };
 		DF64998C4B78B78EDC496EC0 /* Pods_IOS_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -523,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				4CA390BF2791495E009C5B0B /* ChattingListTVC.swift */,
+				4CA390CD2793EDAE009C5B0B /* AddChattingTVC.swift */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				4CA390BC27913DF2009C5B0B /* StartChattingVC.swift in Sources */,
 				4CA3907F277B195E009C5B0B /* HomeworkListTVC.swift in Sources */,
 				23AB78DF2781C7DE00DEC224 /* CustomSideMenuNC.swift in Sources */,
+				4CA390CE2793EDAE009C5B0B /* AddChattingTVC.swift in Sources */,
 				4CA3907D277B1954009C5B0B /* SubjectListCVC.swift in Sources */,
 				2332BBD2278336AC00290B95 /* CustomNB.swift in Sources */,
 				23549B1D276E0A6F00B61691 /* HomeVC.swift in Sources */,

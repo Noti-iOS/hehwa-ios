@@ -51,7 +51,6 @@ extension ChattingVC{
     @objc func addChatting(){
         let addChattingVC = ViewControllerFactory.viewController(for: .addChatting)
         addChattingVC.modalPresentationStyle = .fullScreen
-        addChattingVC.modalTransitionStyle = .crossDissolve
         self.present(addChattingVC, animated: true, completion: nil)
     }
     

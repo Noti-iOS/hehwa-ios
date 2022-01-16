@@ -10,18 +10,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="r6f-ku-shg" userLabel="Content">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="42"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2F-wv-hHS">
-                    <rect key="frame" x="26" y="46" width="362" height="1"/>
+                    <rect key="frame" x="26" y="34" width="362" height="1"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="ocl-zd-HcT"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAVIBAR TITLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZj-jF-P5a">
-                    <rect key="frame" x="26" y="8" width="161" height="36"/>
+                    <rect key="frame" x="26" y="-4" width="161" height="36"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="WTc-BC-Vae"/>
                     </constraints>
@@ -30,7 +30,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buM-6y-1Iu">
-                    <rect key="frame" x="322" y="10" width="24" height="24"/>
+                    <rect key="frame" x="322" y="-2" width="24" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="24" id="Sgu-MI-l1m"/>
                         <constraint firstAttribute="height" constant="24" id="m4Y-ft-hH0"/>
@@ -39,7 +39,7 @@
                     <buttonConfiguration key="configuration" style="plain" image="Alarm"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWR-5D-5qv">
-                    <rect key="frame" x="364" y="10" width="24" height="24"/>
+                    <rect key="frame" x="364" y="-2" width="24" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="QOe-9h-3tq"/>
                         <constraint firstAttribute="width" constant="24" id="YGK-fl-uTU"/>
