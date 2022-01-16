@@ -52,6 +52,7 @@ extension ChattingVC{
         let addChattingVC = ViewControllerFactory.viewController(for: .addChatting)
         addChattingVC.modalPresentationStyle = .fullScreen
         self.present(addChattingVC, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(addChattingVC, animated: true)
     }
     
     func startChatting(){
