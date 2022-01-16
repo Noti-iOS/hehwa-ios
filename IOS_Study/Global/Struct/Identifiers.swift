@@ -17,6 +17,8 @@ struct Identifiers {
     static let signupSB = "Signup"
     static let sideMenuSB = "SideMenu"
     static let profileImageSB = "ProfileImage"
+    static let addChattingSB = "AddChatting"
+    static let startChattingSB = "StartChatting"
     
     //MARK: - Controller
     static let MainTBC = "MainTBC"
@@ -27,6 +29,8 @@ struct Identifiers {
     static let signupVC = "SignupVC"
     static let sideMenuNC = "SideMenuNC"
     static let profileImageVC = "ProfileImageVC"
+    static let addChattingVC = "AddChattingVC"
+    static let startChattingVC = "StartChattingVC"
     
     //MARK: - Cell
     static let subjectListCVC = "SubjectListCVC"
@@ -35,6 +39,7 @@ struct Identifiers {
     static let menuListTVC = "MenuListTVC"
     static let subjectTVC = "SubjectTVC"
     static let allSubjectDataTVC = "AllSubjectDataTVC"
+    static let chattingListTVC = "ChattingListTVC"
     
     //MARK: - View
 }
