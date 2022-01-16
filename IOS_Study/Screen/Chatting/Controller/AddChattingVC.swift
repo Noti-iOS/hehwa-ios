@@ -24,6 +24,10 @@ class AddChattingVC: UIViewController {
     // 검색시 필터링 되는 유저
     var filteredUser:[ChattingInfo]!
     
+    //dimiss delegate
+    var delegate : DismissDelegate!
+    var isSelected:Bool = false
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var userTV: UITableView!
     @IBOutlet weak var okButton: UILabel!
@@ -37,16 +41,14 @@ class AddChattingVC: UIViewController {
     
 // 화면 이동 기능 구현중...
     @IBAction func tapFunction(sender: UITapGestureRecognizer) {
-        let startChattingVC = ViewControllerFactory.viewController(for: .startChatting)
-        let rootView = presentingViewController
-       startChattingVC.modalPresentationStyle = .fullScreen
-        startChattingVC.modalTransitionStyle = .crossDissolve
-        
-        dismiss(animated: false, completion: {
-            print(rootView?.navigationController)
-        })
+        //self.delegate = ChattingVC
+        if self.delegate != nil {
+            //ChattingVC의 dismissViewController가 실행되고 매개변수로 AddChattingVC가 넘어간다.
+            self.delegate.dismissViewController(self)
+        }
        
     }
+    
     @IBAction func dismiss(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -57,8 +59,8 @@ extension AddChattingVC{
     func setupUI(){
         okButton.isEnabled = false
         let tap = UITapGestureRecognizer(target: self, action: #selector(AddChattingVC.tapFunction))
-                okButton.isUserInteractionEnabled = false
-                okButton.addGestureRecognizer(tap)
+        okButton.isUserInteractionEnabled = false
+        okButton.addGestureRecognizer(tap)
     }
     
     func setupSearchBar(){
@@ -100,9 +102,22 @@ extension AddChattingVC:UISearchBarDelegate{
 
 //MARK: - UITableViewDelegate
 extension AddChattingVC:UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // 셀 선택되어있을때 클릭하면 선택해제
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if let indexPathForSelectedRow = tableView.indexPathForSelectedRow,
+                indexPathForSelectedRow == indexPath {
+                tableView.deselectRow(at: indexPath, animated: false)
+            okButton.isEnabled = false
+            okButton.isUserInteractionEnabled = false
+                return nil
+            }
         okButton.isEnabled = true
         okButton.isUserInteractionEnabled = true
+        return indexPath
+    }
+    
+    func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+        return indexPath
     }
 }
 

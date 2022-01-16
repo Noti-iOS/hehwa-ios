@@ -63,6 +63,7 @@
 		4CA390C82792CAA9009C5B0B /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390C72792CAA8009C5B0B /* UINavigationController+.swift */; };
 		4CA390CA2792D0AA009C5B0B /* ChattingNB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CA390C92792D0AA009C5B0B /* ChattingNB.xib */; };
 		4CA390CE2793EDAE009C5B0B /* AddChattingTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390CD2793EDAE009C5B0B /* AddChattingTVC.swift */; };
+		4CA390D127949963009C5B0B /* DismissDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA390D027949963009C5B0B /* DismissDelegate.swift */; };
 		7E047FEDE0BD6F2FF8800C32 /* Pods_IOS_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF64998C4B78B78EDC496EC0 /* Pods_IOS_Study.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +129,7 @@
 		4CA390C72792CAA8009C5B0B /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
 		4CA390C92792D0AA009C5B0B /* ChattingNB.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingNB.xib; sourceTree = "<group>"; };
 		4CA390CD2793EDAE009C5B0B /* AddChattingTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChattingTVC.swift; sourceTree = "<group>"; };
+		4CA390D027949963009C5B0B /* DismissDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissDelegate.swift; sourceTree = "<group>"; };
 		DF64998C4B78B78EDC496EC0 /* Pods_IOS_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -194,6 +196,7 @@
 		2326B3512761EB6000677E7F /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				4CA390CF27949944009C5B0B /* Protocol */,
 				4CA390AE27845FE3009C5B0B /* Class */,
 				23006589277B290F00F117D8 /* Font */,
 				232D1C45277A007000F4A3FC /* Extension */,
@@ -530,6 +533,14 @@
 			path = TVC;
 			sourceTree = "<group>";
 		};
+		4CA390CF27949944009C5B0B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				4CA390D027949963009C5B0B /* DismissDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		F45527BFBD8BC6C365249373 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -675,6 +686,7 @@
 				4CA390A72782BB9B009C5B0B /* Notification+.swift in Sources */,
 				23549B14276E06D500B61691 /* Identifiers.swift in Sources */,
 				232D1C49277A018800F4A3FC /* UITextView+.swift in Sources */,
+				4CA390D127949963009C5B0B /* DismissDelegate.swift in Sources */,
 				232D1C47277A008F00F4A3FC /* UITextField+.swift in Sources */,
 				4CA390BC27913DF2009C5B0B /* StartChattingVC.swift in Sources */,
 				4CA3907F277B195E009C5B0B /* HomeworkListTVC.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreMIDI
 
 class ChattingVC: UIViewController {
     // animator 선언
@@ -49,9 +50,11 @@ extension ChattingVC{
     }
     
     @objc func addChatting(){
-        let addChattingVC = ViewControllerFactory.viewController(for: .addChatting)
-        addChattingVC.modalPresentationStyle = .fullScreen
-        self.present(addChattingVC, animated: true, completion: nil)
+        let addChattingVC = ViewControllerFactory.viewController(for: .addChatting) as? AddChattingVC
+        addChattingVC?.modalPresentationStyle = .fullScreen
+        //addChatting에 선언된 delegate에 ChattingVC를 할당해준다.
+        addChattingVC?.delegate = self
+        self.present(addChattingVC! , animated: true, completion: nil)
 //        self.navigationController?.pushViewController(addChattingVC, animated: true)
     }
     
@@ -86,5 +89,18 @@ extension ChattingVC:UITableViewDataSource{
         }
         cell.update(chattingInfo: chattingList[indexPath.row])
         return cell
+    }
+}
+
+//MARK: - DismissDelegate
+extension ChattingVC:DismissDelegate{
+    func dismissViewController(_ controller: UIViewController) {
+        controller.dismiss(animated: true, completion: {()->Void in
+            guard let startChattingVC = ViewControllerFactory.viewController(for: .startChatting) as? StartChattingVC else {return}
+            // 채팅 시작시 탭바를 숨김
+            startChattingVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(startChattingVC, animated: false)
+            print("ddfd")
+        })
     }
 }
