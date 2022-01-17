@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreMIDI
 
 class ChattingVC: UIViewController {
     // animator 선언
@@ -24,6 +25,7 @@ class ChattingVC: UIViewController {
         super.viewDidLoad()
         setupNaviBar()
         setupTV()
+        setupNavi()
     }
 }
 
@@ -43,18 +45,25 @@ extension ChattingVC{
         chattingListTV.dataSource = self
     }
     
+    func setupNavi(){
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     @objc func addChatting(){
-        let addChattingVC = ViewControllerFactory.viewController(for: .addChatting)
-        addChattingVC.modalPresentationStyle = .fullScreen
-        addChattingVC.modalTransitionStyle = .crossDissolve
-        self.present(addChattingVC, animated: true, completion: nil)
+        let addChattingVC = ViewControllerFactory.viewController(for: .addChatting) as? AddChattingVC
+        addChattingVC?.modalPresentationStyle = .fullScreen
+        //addChatting에 선언된 delegate에 ChattingVC를 할당해준다.
+        addChattingVC?.delegate = self
+        self.present(addChattingVC! , animated: true, completion: nil)
+//        self.navigationController?.pushViewController(addChattingVC, animated: true)
     }
     
     func startChatting(){
-        let startChattingVC = ViewControllerFactory.viewController(for: .startChatting)
-        startChattingVC.modalPresentationStyle = .custom
-        startChattingVC.transitioningDelegate = self
-        self.present(startChattingVC, animated: true, completion: nil)
+        guard let startChattingVC = ViewControllerFactory.viewController(for: .startChatting) as? StartChattingVC else {return}
+        // 채팅 시작시 탭바를 숨김
+        startChattingVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(startChattingVC, animated: true)
+        print("ddfd")
     }
 }
 
@@ -83,13 +92,15 @@ extension ChattingVC:UITableViewDataSource{
     }
 }
 
-//MARK: - UIViewControllerTransitioningDelegate
-extension ChattingVC:UIViewControllerTransitioningDelegate {
-    //Transition 선언
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return PresentTransition()
-    }
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return DismissTransition()
+//MARK: - DismissDelegate
+extension ChattingVC:DismissDelegate{
+    func dismissViewController(_ controller: UIViewController) {
+        controller.dismiss(animated: true, completion: {()->Void in
+            guard let startChattingVC = ViewControllerFactory.viewController(for: .startChatting) as? StartChattingVC else {return}
+            // 채팅 시작시 탭바를 숨김
+            startChattingVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(startChattingVC, animated: false)
+            print("ddfd")
+        })
     }
 }

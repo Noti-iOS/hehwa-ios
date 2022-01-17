@@ -28,7 +28,8 @@ class MainTBC: UITabBarController {
     func setTabBar() {
         
         let homeTab = makeTabVC(vcType: .home, tabBarTitle: "Home", tabBarImage: "Home", tabBarSelectedImage: "Home")
-        let chattingTab = makeTabVC(vcType: .chatting, tabBarTitle: "Chat", tabBarImage: "Chat", tabBarSelectedImage: "Chat")
+        // 채팅탭 이동시 채팅은 navigation controller로 설정
+        let chattingTab = UINavigationController(rootViewController: makeTabVC(vcType: .chatting, tabBarTitle: "Chat", tabBarImage: "Chat", tabBarSelectedImage: "Chat")) 
         let mypageTab = makeTabVC(vcType: .myPage, tabBarTitle: "MyPage", tabBarImage: "MyPage", tabBarSelectedImage: "MyPage")
         
         // 탭바 스타일 설정

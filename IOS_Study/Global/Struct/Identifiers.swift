@@ -40,6 +40,7 @@ struct Identifiers {
     static let subjectTVC = "SubjectTVC"
     static let allSubjectDataTVC = "AllSubjectDataTVC"
     static let chattingListTVC = "ChattingListTVC"
+    static let addChattingTVC = "AddChattingTVC"
     
     //MARK: - View
 }

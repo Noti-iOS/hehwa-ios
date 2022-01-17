@@ -95,6 +95,7 @@
                             <constraint firstItem="gOr-2F-qOW" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="tFo-z9-b8R"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gHA-BX-Rd2"/>
                     <connections>
                         <outlet property="chattingListTV" destination="c8d-uq-dsO" id="DOM-ZM-Wlm"/>
                         <outlet property="customNaviBar" destination="gOr-2F-qOW" id="hhV-bl-VGk"/>
@@ -102,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
+            <point key="canvasLocation" x="3723.188405797102" y="176.78571428571428"/>
         </scene>
     </scenes>
     <resources>
