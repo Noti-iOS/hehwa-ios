@@ -6,6 +6,13 @@ target 'IOS_Study' do
   use_frameworks!
 
   # Pods for IOS_Study
+  # Rx
+  pod 'RxSwift', '< 6.2.0'
+  pod 'RxCocoa', '< 6.2.0'
+  pod 'RxGesture', '< 4.1.0'
+  pod 'RxDataSources', '<5.1.0'
+  
+  # Others
   pod 'FSCalendar'
   pod 'KakaoSDK'
   pod 'Alamofire', '~> 5.5'

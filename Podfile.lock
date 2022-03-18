@@ -5,6 +5,7 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
+  - Differentiator (5.0.0)
   - FSCalendar (2.8.2)
   - GoogleSignIn (6.1.0):
     - AppAuth (~> 1.4)
@@ -46,6 +47,19 @@ PODS:
     - KakaoSDKCommon/Common (= 2.8.4)
   - KakaoSDKUser (2.8.4):
     - KakaoSDKAuth (= 2.8.4)
+  - RxCocoa (6.1.0):
+    - RxRelay (= 6.1.0)
+    - RxSwift (= 6.1.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxGesture (4.0.3):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.1.0):
+    - RxSwift (= 6.1.0)
+  - RxSwift (6.1.0)
   - SideMenu (6.5.0)
 
 DEPENDENCIES:
@@ -53,12 +67,17 @@ DEPENDENCIES:
   - FSCalendar
   - GoogleSignIn
   - KakaoSDK
+  - RxCocoa (< 6.2.0)
+  - RxDataSources (< 5.1.0)
+  - RxGesture (< 4.1.0)
+  - RxSwift (< 6.2.0)
   - SideMenu
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AppAuth
+    - Differentiator
     - FSCalendar
     - GoogleSignIn
     - GTMAppAuth
@@ -72,11 +91,17 @@ SPEC REPOS:
     - KakaoSDKTalk
     - KakaoSDKTemplate
     - KakaoSDKUser
+    - RxCocoa
+    - RxDataSources
+    - RxGesture
+    - RxRelay
+    - RxSwift
     - SideMenu
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   GoogleSignIn: c90b5bec45e780f54c6a8e1e3c182a86e3dda69d
   GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
@@ -90,8 +115,13 @@ SPEC CHECKSUMS:
   KakaoSDKTalk: ac4d2ec8b7323a50f98d74e6358fc8a296107566
   KakaoSDKTemplate: 23ff3023d189f0962d28e34627a19c0eb8c1c7a6
   KakaoSDKUser: d878977e0ba6b365cfeac3b6319cdf4231713bea
+  RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxGesture: abadd243fc36db74df43dfc893829ddde94f1a3d
+  RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
+  RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: 4b87d872e5c1c00386ab1f0fddba683d732195cb
+PODFILE CHECKSUM: ab084aa0688cc8c4c1fb3ccb5770bbdfebc2939b
 
 COCOAPODS: 1.11.2
